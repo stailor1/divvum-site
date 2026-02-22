@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Divvum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #2ec4a9;
+      --teal-dark: #1fa08a;
+      --teal-light: #d0f5ef;
+      --navy: #0d1f1a;
+      --gray: #6b7f7a;
+      --bg-primary: #f9fefe;
+      --text-primary: var(--navy);
+      --nav-bg: white;
+    }
+
+
+    @keyframes pageEnter {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s, color 0.3s;
+      animation: pageEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      background: var(--nav-bg);
+      border-bottom: none;
+      transition: background-color 0.3s;
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .nav-pill {
+      background: var(--teal);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+
+    .dot {
+      width: 7px; height: 7px;
+      background: white;
+      border-radius: 50%;
+      animation: blink 1.8s infinite;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* MAIN CONTENT */
+    main {
+      flex: 1;
+      padding: 60px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: var(--teal);
+    }
+
+    p {
+      line-height: 1.65;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .last-updated {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    ul li {
+      line-height: 1.65;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    a.doc-link {
+      color: var(--teal);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a.doc-link:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 28px;
+      font-size: 0.78rem;
+      color: var(--navy);
+      border-top: none;
+      background: white;
+    }
+
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+
+    .footer-links a:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--teal);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--teal-dark);
+    }
+
+    @keyframes pageExit {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(-20px); }
+    }
+    .page-exit {
+      animation: pageExit 0.4s ease-in both;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html" class="logo">DIVVUM</a>
+
+    <div class="nav-pill">
+      <div class="dot"></div>
+      Now available
+    </div>
+  </nav>
+
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Effective Date: 2/17/2026</p>
+
+    <h2>1. Information We Collect</h2>
+
+    <h3>Account Information</h3>
+    <ul>
+      <li>Email</li>
+      <li>Username</li>
+      <li>Display name</li>
+      <li>Phone number</li>
+    </ul>
+
+    <h3>Identity Verification (KYC)</h3>
+    <ul>
+      <li>Legal name</li>
+      <li>Date of birth</li>
+      <li>Address</li>
+      <li>Social Security number</li>
+    </ul>
+    <p>Collected only when required for regulatory compliance.</p>
+
+    <h3>Social Data</h3>
+    <ul>
+      <li>Friends lists</li>
+      <li>Group membership</li>
+      <li>Chat content</li>
+      <li>Leaderboard placement</li>
+      <li>Points and VIP status</li>
+    </ul>
+
+    <h3>Transaction Data</h3>
+    <ul>
+      <li>Payment amounts</li>
+      <li>Timestamps</li>
+      <li>Status information</li>
+    </ul>
+    <p>Divvum does not store full bank account or card numbers.</p>
+
+    <h3>Receipt &amp; Document Data</h3>
+    <ul>
+      <li>Images of receipts or documents uploaded by users</li>
+      <li>Merchant names, dates, totals, and line items extracted from uploaded receipts</li>
+      <li>Metadata associated with uploaded files</li>
+    </ul>
+
+    <h3>Device &amp; Authentication Data</h3>
+    <ul>
+      <li>Login activity</li>
+      <li>Device identifiers</li>
+      <li>Biometric login handled by your device</li>
+    </ul>
+
+    <h2>2. How We Use Information</h2>
+    <p>We use data to:</p>
+    <ul>
+      <li>Provide and improve services</li>
+      <li>Authenticate users</li>
+      <li>Prevent fraud</li>
+      <li>Comply with legal obligations</li>
+      <li>Enable payments via Stripe</li>
+      <li>Operate social features</li>
+    </ul>
+
+    <h2>3. How We Share Information</h2>
+    <p>We share data only as necessary with service providers:</p>
+    <ul>
+      <li>Stripe (payment processing &amp; compliance)</li>
+      <li>Mindee (receipt processing and data extraction)</li>
+      <li>Firebase (authentication)</li>
+      <li>Vercel (hosting &amp; infrastructure)</li>
+    </ul>
+    <p>We do not sell user data.</p>
+
+    <h3>Document Processing Services</h3>
+    <p>When you upload a receipt, the image may be transmitted securely to Mindee for automated data extraction. Mindee processes the document solely for the purpose of extracting structured transaction data.</p>
+    <p>Receipt images and extracted data are retained only as long as necessary to provide the service and comply with legal obligations.</p>
+
+    <h2>4. Data Retention</h2>
+    <p>We retain information:</p>
+    <ul>
+      <li>As long as your account is active</li>
+      <li>As required for legal or regulatory obligations</li>
+      <li>As required by Stripe or financial partners</li>
+    </ul>
+
+    <h2>5. Security</h2>
+    <p>We use industry-standard safeguards including:</p>
+    <ul>
+      <li>Encryption in transit (TLS)</li>
+      <li>Secure cloud infrastructure</li>
+      <li>Role-based access controls</li>
+    </ul>
+    <p>Sensitive financial information is handled by Stripe.</p>
+
+    <h2>6. User Rights</h2>
+    <p>You may:</p>
+    <ul>
+      <li>Request account deletion</li>
+      <li>Request access to your data</li>
+      <li>Disconnect linked services</li>
+    </ul>
+    <p>Some data may be retained as required by law or third-party financial providers.</p>
+    <p>To make a privacy request, contact: <a href="mailto:contact@divvum.app" class="doc-link">contact@divvum.app</a></p>
+
+    <h2>7. Children's Privacy</h2>
+    <p>Divvum is not intended for individuals under 18.</p>
+
+    <h2>8. Changes to Policy</h2>
+    <p>We may update this Policy. Continued use after updates constitutes acceptance.</p>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    Divvum · © 2026
+  </footer>
+
+  <script>
+    var logoLink = document.querySelector('a.logo');
+    if (logoLink) {
+      logoLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        var href = this.getAttribute('href');
+        document.body.classList.add('page-exit');
+        setTimeout(function() { window.location.href = href; }, 400);
+      });
+    }
+  </script>
+</body>
+</html>

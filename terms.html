@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service — Divvum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #2ec4a9;
+      --teal-dark: #1fa08a;
+      --teal-light: #d0f5ef;
+      --navy: #0d1f1a;
+      --gray: #6b7f7a;
+      --bg-primary: #f9fefe;
+      --text-primary: var(--navy);
+      --nav-bg: white;
+    }
+
+
+    @keyframes pageEnter {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s, color 0.3s;
+      animation: pageEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      background: var(--nav-bg);
+      border-bottom: none;
+      transition: background-color 0.3s;
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .nav-pill {
+      background: var(--teal);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+
+    .dot {
+      width: 7px; height: 7px;
+      background: white;
+      border-radius: 50%;
+      animation: blink 1.8s infinite;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* MAIN CONTENT */
+    main {
+      flex: 1;
+      padding: 60px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: var(--teal);
+    }
+
+    p {
+      line-height: 1.65;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .last-updated {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    ul li {
+      line-height: 1.65;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    a.doc-link {
+      color: var(--teal);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a.doc-link:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 28px;
+      font-size: 0.78rem;
+      color: var(--navy);
+      border-top: none;
+      background: white;
+    }
+
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+
+    .footer-links a:hover {
+      color: var(--teal-dark);
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--teal);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--teal-dark);
+    }
+
+    @keyframes pageExit {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(-20px); }
+    }
+    .page-exit {
+      animation: pageExit 0.4s ease-in both;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html" class="logo">DIVVUM</a>
+
+    <div class="nav-pill">
+      <div class="dot"></div>
+      Now available
+    </div>
+  </nav>
+
+  <main>
+    <h1>Terms of Service</h1>
+    <p class="last-updated">Last Updated: [Date]</p>
+
+    <h2>1. Introduction</h2>
+    <p>Welcome to Divvum ("Divvum," "we," "our," or "us"). Divvum is a social expense-splitting and peer-to-peer payment facilitation platform that enables users to connect bank accounts, send and receive payments through licensed third-party financial service providers, and participate in social features such as friends lists, groups, chats, and points-based rewards.</p>
+    <p>Divvum is a software platform only.</p>
+    <p>By creating an account or using Divvum, you agree to these Terms of Service ("Terms"), as well as the applicable agreements of our third-party providers, including Stripe and its financial institution partners.</p>
+    <p>If you do not agree, do not use the Services.</p>
+
+    <h2>2. Eligibility</h2>
+    <p>You must:</p>
+    <ul>
+      <li>Be at least 18 years old</li>
+      <li>Be a resident of the United States</li>
+      <li>Provide accurate and truthful information</li>
+      <li>Use Divvum only for lawful purposes</li>
+    </ul>
+    <p>We reserve the right to refuse service to anyone at our discretion.</p>
+
+    <h2>3. Nature of the Service</h2>
+    <p>Divvum:</p>
+    <ul>
+      <li>Is not a bank</li>
+      <li>Is not a money transmitter</li>
+      <li>Is not a financial institution</li>
+      <li>Does not hold or custody funds</li>
+      <li>Is not a broker or financial advisor</li>
+    </ul>
+    <p>Divvum acts solely as a software platform that facilitates communication and payment instructions between users.</p>
+    <p>All funds are processed, held, and transmitted by Stripe, Inc. and its regulated financial institution partners. Divvum does not at any time take possession or control of user funds.</p>
+
+    <h2>4. Payment Processing (Stripe Connect)</h2>
+    <p>Payment processing services are provided by Stripe, Inc.</p>
+    <p>By using Divvum's payment features, you agree to be bound by:</p>
+    <ul>
+      <li><a href="https://stripe.com/legal/connect-account" class="doc-link" target="_blank" rel="noopener">Stripe's Connected Account Agreement</a></li>
+      <li><a href="https://stripe.com/legal/ssa" class="doc-link" target="_blank" rel="noopener">Stripe's Terms of Service</a></li>
+      <li><a href="https://stripe.com/privacy" class="doc-link" target="_blank" rel="noopener">Stripe's Privacy Policy</a></li>
+    </ul>
+    <p>You authorize Divvum to share necessary personal and transactional information with Stripe for identity verification (KYC), fraud prevention, and regulatory compliance.</p>
+    <p>Stripe may:</p>
+    <ul>
+      <li>Conduct identity verification</li>
+      <li>Freeze or restrict accounts</li>
+      <li>Reverse transactions</li>
+      <li>Withhold funds</li>
+      <li>Reject payments</li>
+    </ul>
+    <p>Divvum is not liable for actions taken by Stripe or its banking partners.</p>
+
+    <h2>5. Identity Verification (KYC)</h2>
+    <p>To access certain features (such as receiving funds or instant withdrawals), you may be required to provide:</p>
+    <ul>
+      <li>Full legal name</li>
+      <li>Date of birth</li>
+      <li>Address</li>
+      <li>Social Security number</li>
+    </ul>
+    <p>This information is securely transmitted to Stripe solely for compliance with U.S. anti-money laundering (AML) and Know Your Customer (KYC) requirements.</p>
+    <p>Failure to complete verification may result in restricted access.</p>
+
+    <h2>6. Fees &amp; Withdrawals</h2>
+    <ul>
+      <li>Standard instant withdrawal fee: 2.5% unless otherwise stated</li>
+      <li>VIP users may qualify for reduced fees (e.g., 1.5%)</li>
+      <li>All fees are disclosed prior to transaction authorization</li>
+    </ul>
+    <p>Divvum may modify fees at any time with appropriate notice.</p>
+    <p>Users are responsible for:</p>
+    <ul>
+      <li>Chargebacks</li>
+      <li>ACH returns</li>
+      <li>Payment reversals</li>
+      <li>Dispute fees</li>
+      <li>Insufficient fund penalties</li>
+    </ul>
+
+    <h2>7. Social Features (Friends, Groups, Chat)</h2>
+    <p>Divvum includes social functionality. You are solely responsible for content you post or transmit.</p>
+    <p>We may remove content or suspend accounts that involve:</p>
+    <ul>
+      <li>Fraud</li>
+      <li>Harassment</li>
+      <li>Hate speech</li>
+      <li>Illegal activity</li>
+      <li>Spam</li>
+      <li>Platform abuse</li>
+    </ul>
+    <p>Divvum is not responsible for disputes between users.</p>
+
+    <h2>8. User-Uploaded Content &amp; Receipt Scanning</h2>
+    <p>Divvum may allow users to upload images or documents, including receipts, for the purpose of expense tracking and payment facilitation.</p>
+    <p>By uploading content, you grant Divvum a limited, non-exclusive license to process, analyze, store, and transmit such content solely to provide the Services.</p>
+    <p>Receipt images may be processed using third-party document analysis services, including Mindee, to extract transaction details such as merchant name, date, and amount.</p>
+    <p>You represent and warrant that:</p>
+    <ul>
+      <li>You have the legal right to upload the content</li>
+      <li>The content does not violate any law or third-party rights</li>
+    </ul>
+    <p>Divvum does not guarantee the accuracy of extracted data and is not liable for errors in automated document processing.</p>
+
+    <h2>9. Points, Leaderboards &amp; VIP Program</h2>
+    <p>Divvum may award points based on platform activity.</p>
+    <ul>
+      <li>Points have no monetary value</li>
+      <li>Points are not property</li>
+      <li>Points are non-transferable</li>
+      <li>Points cannot be redeemed for cash</li>
+      <li>Points may expire or decay</li>
+      <li>We may modify or terminate the program at any time</li>
+    </ul>
+    <p>VIP benefits (such as reduced fees) are promotional and subject to change or termination.</p>
+    <p>Leaderboards are for entertainment purposes only.</p>
+
+    <h2>10. Transaction Limits &amp; Risk Controls</h2>
+    <p>Divvum reserves the right to:</p>
+    <ul>
+      <li>Impose transaction limits</li>
+      <li>Restrict withdrawal amounts</li>
+      <li>Implement velocity limits</li>
+      <li>Suspend accounts</li>
+      <li>Freeze activity</li>
+    </ul>
+    <p>If we suspect fraud, abuse, illegal conduct, or risk exposure.</p>
+
+    <h2>11. Indemnification</h2>
+    <p>You agree to indemnify and hold harmless Divvum, its officers, directors, affiliates, and employees from any claims, damages, losses, liabilities, or expenses arising from:</p>
+    <ul>
+      <li>Your use of the Services</li>
+      <li>Your violation of these Terms</li>
+      <li>Your transactions with other users</li>
+      <li>Fraudulent or unlawful conduct</li>
+    </ul>
+
+    <h2>12. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, Divvum shall not be liable for:</p>
+    <ul>
+      <li>Indirect or consequential damages</li>
+      <li>Lost profits</li>
+      <li>Transaction delays</li>
+      <li>Errors caused by financial institutions</li>
+      <li>Actions taken by Stripe</li>
+      <li>User disputes</li>
+    </ul>
+    <p>Services are provided "as is" without warranties of any kind.</p>
+
+    <h2>13. Arbitration &amp; Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of Illinois, without regard to conflict of law principles.</p>
+    <p>All disputes shall be resolved through binding individual arbitration administered by the American Arbitration Association (AAA).</p>
+    <p>You waive:</p>
+    <ul>
+      <li>The right to a jury trial</li>
+      <li>The right to participate in a class action</li>
+    </ul>
+
+    <h2>14. Termination</h2>
+    <p>We may suspend or terminate accounts at our discretion. Users may delete their accounts at any time. Certain legal obligations survive termination.</p>
+
+    <h2>15. Changes to Terms</h2>
+    <p>We may update these Terms. Continued use after updates constitutes acceptance.</p>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    Divvum · © 2026
+  </footer>
+
+  <script>
+    var logoLink = document.querySelector('a.logo');
+    if (logoLink) {
+      logoLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        var href = this.getAttribute('href');
+        document.body.classList.add('page-exit');
+        setTimeout(function() { window.location.href = href; }, 400);
+      });
+    }
+  </script>
+</body>
+</html>
