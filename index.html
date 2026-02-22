@@ -1077,53 +1077,55 @@
 
     @media (max-width: 600px) {
       /* Nav */
-      nav { padding: 16px 20px; }
+      nav { padding: 14px 20px; }
       .bubble { display: none; }
 
       /* Hero */
-      main { padding: 48px 20px 40px; }
-      h1 { font-size: clamp(2rem, 9vw, 2.8rem); margin-bottom: 16px; }
-      .sub { font-size: 0.95rem; margin-bottom: 36px; }
-      .phone-wrap { margin-bottom: 32px; }
+      main { padding: 40px 24px 32px; }
+      h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); margin-bottom: 12px; line-height: 1.12; }
+      .sub { font-size: 0.88rem; margin-bottom: 28px; max-width: 100%; }
+      .phone-wrap { margin-bottom: 24px; }
       .download-group { width: 100%; display: flex; justify-content: center; }
-      .dl-btn img { height: 44px; }
+      .dl-btn img { height: 42px; }
 
       /* Tiers section */
-      .mint-section { flex-direction: column; justify-content: flex-start; padding: 48px 20px 48px; gap: 28px; }
-      .mint-section::before { height: 100px; }
-      .mint-blend { height: 160px; }
+      .mint-section { flex-direction: column; justify-content: flex-start; padding: 56px 20px 56px; gap: 20px; min-height: auto; }
+      .mint-section::before { height: 80px; }
+      .mint-blend { height: 120px; }
       .tiers-tagline { width: 100%; padding-right: 0; text-align: center; }
-      .tiers-tagline-title { margin-right: 0; }
-      .tiers-tagline p { text-align: center; }
+      .tiers-tagline-title { margin-right: 0; font-size: 1.4rem; margin-bottom: 12px; }
+      .tiers-tagline p { text-align: center; font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px; }
       .tiers-inner { width: 100%; padding: 0; }
-      .tiers-heading { font-size: clamp(1.6rem, 6vw, 2.2rem); margin-bottom: 24px; }
+      .tiers-eyebrow { font-size: 0.68rem; margin-bottom: 6px; }
+      .tiers-heading { font-size: clamp(1.5rem, 6vw, 2rem); margin-bottom: 18px; }
       .tier-card:hover { transform: none; }
-      .tier-card { padding: 18px 18px 14px; }
+      .tier-card { padding: 16px 16px 10px; }
+      .tier-features li { font-size: 0.78rem; }
 
       /* Leaderboard section */
-      .lb-section { flex-direction: column; align-items: stretch; gap: 40px; padding: 120px 20px 80px; }
+      .lb-section { flex-direction: column; align-items: stretch; gap: 28px; padding: 72px 20px 56px; }
       .lb-content { width: 100%; }
       .lb-tagline { width: 100%; text-align: center; order: -1; }
-      .lb-sub { text-align: center; }
-      .lb-blurb { text-align: center; }
-      .lb-heading { text-align: center; }
+      .lb-heading { text-align: center; font-size: 1.4rem; margin-bottom: 12px; }
+      .lb-sub { text-align: center; font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px; }
+      .lb-blurb { text-align: center; font-size: 0.88rem; line-height: 1.6; }
 
       /* Leaderboard top/bottom blends */
-      .lb-top-blend { height: 80px; }
-      .lb-blend-default { height: 70px; }
+      .lb-top-blend { height: 60px; }
+      .lb-blend-default { height: 56px; }
 
       /* Podium */
-      .lb-podium { gap: 12px; margin-bottom: 20px; }
-      .lb-pod-avatar { width: 46px; height: 46px; }
-      .lb-pod-1 .lb-pod-avatar { width: 60px; height: 60px; }
+      .lb-podium { gap: 10px; margin-bottom: 16px; }
+      .lb-pod-avatar { width: 42px; height: 42px; }
+      .lb-pod-1 .lb-pod-avatar { width: 54px; height: 54px; }
 
       /* List rows */
       .lb-row { padding: 8px 12px; gap: 8px; border-radius: 10px; }
       .lb-rbar { display: none; }
-      .lb-ravatar { width: 30px; height: 30px; }
+      .lb-ravatar { width: 28px; height: 28px; }
 
       /* Footer */
-      footer { padding: 20px; font-size: 0.8rem; }
+      footer { padding: 18px 20px; font-size: 0.76rem; }
       .footer-links { gap: 16px; margin-bottom: 8px; }
     }
   </style>
