@@ -1073,6 +1073,208 @@
     .lb-row-silver .lb-rscore { color: #9ca3af; }
     .lb-row-bronze .lb-rscore { color: #b97333; }
 
+    /* ABOUT SECTION */
+    .about-section {
+      background: var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 72px;
+      padding: 140px 48px 100px;
+      min-height: 80vh;
+      opacity: 0;
+      position: relative;
+      transition: opacity 1s ease;
+    }
+    .about-section.visible { opacity: 1; }
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 260px;
+      background: linear-gradient(to bottom, var(--bg-primary) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .about-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 480px;
+      background: linear-gradient(to bottom, rgba(242,240,239,0) 0%, var(--bg-primary) 100%);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .about-graphic {
+      width: 360px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 4;
+    }
+
+    /* Main expense card */
+    .exp-card {
+      background: white;
+      border-radius: 20px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .exp-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--teal);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+    .exp-info { flex: 1; }
+    .exp-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+    .exp-meta { font-size: 0.72rem; color: var(--gray); margin-top: 2px; }
+    .exp-amount {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    /* Connector */
+    .exp-connector {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 2px 24px;
+    }
+    .exp-connector-line {
+      flex: 1;
+      border-top: 2px dashed rgba(26,188,156,0.28);
+    }
+    .exp-connector-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    /* 2×2 person grid */
+    .exp-people {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .exp-person {
+      background: white;
+      border-radius: 16px;
+      padding: 13px 15px 11px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    .exp-person.paid { border-left: 3px solid var(--teal); }
+    .exp-person.pending { border-left: 3px solid rgba(0,0,0,0.1); }
+    .exp-person-top { display: flex; align-items: center; gap: 8px; }
+    .exp-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .exp-person.pending .exp-avatar { background: #e5e5e5; color: var(--gray); }
+    .exp-person-name { font-size: 0.76rem; font-weight: 600; color: var(--navy); }
+    .exp-person-amt {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+      padding-left: 34px;
+    }
+    .exp-status {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 0.52rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 100px;
+    }
+    .exp-status.paid { background: rgba(26,188,156,0.12); color: var(--teal-dark); }
+    .exp-status.pending { background: rgba(0,0,0,0.05); color: var(--gray); }
+
+    /* Progress bar card */
+    .exp-progress {
+      background: white;
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    }
+    .exp-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 9px;
+    }
+    .exp-progress-label { font-size: 0.72rem; color: var(--gray); }
+    .exp-progress-vals {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--teal-dark);
+    }
+    .exp-progress-bar {
+      height: 7px;
+      background: rgba(26,188,156,0.12);
+      border-radius: 100px;
+      overflow: hidden;
+      margin-bottom: 7px;
+    }
+    .exp-progress-fill {
+      height: 100%;
+      width: 50%;
+      background: linear-gradient(to right, var(--teal-light), var(--teal));
+      border-radius: 100px;
+    }
+    .exp-progress-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      color: var(--gray);
+    }
+    .exp-progress-footer span:last-child { color: var(--teal-dark); font-weight: 600; }
+
+    /* About text */
+    .about-text {
+      width: 260px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 4;
+    }
+
     /* Section nav pill */
 
     @media (max-width: 600px) {
@@ -1110,6 +1312,15 @@
       }
       .download-group { width: 100%; display: flex; justify-content: center; margin-top: 30px; }
       .dl-btn img { height: 42px; }
+
+      /* About section */
+      .about-section { flex-direction: column; padding: 56px 28px 80px; gap: 32px; min-height: auto; }
+      .about-section::before { height: 80px; }
+      .about-section::after { height: 260px; }
+      .about-graphic { width: 100%; order: 2; }
+      .about-text { width: 100%; text-align: center; order: 1; }
+      .about-text p { text-align: center; font-size: 0.85rem; line-height: 1.6; }
+      .about-text .tiers-tagline-title { margin-right: 0; font-size: 1.3rem; margin-bottom: 10px; }
 
       /* Tiers section */
       .mint-section { flex-direction: column; justify-content: flex-start; padding: 56px 28px 56px; gap: 20px; min-height: auto; }
@@ -1238,6 +1449,93 @@
       </a>
     </div>
   </main>
+
+  <!-- about section -->
+  <section class="about-section">
+
+    <!-- Graphic: split expense UI -->
+    <div class="about-graphic">
+
+      <div class="exp-card">
+        <div class="exp-icon">🍽️</div>
+        <div class="exp-info">
+          <div class="exp-name">Dinner at Rosso's</div>
+          <div class="exp-meta">4 people · Tonight</div>
+        </div>
+        <div class="exp-amount">$84.00</div>
+      </div>
+
+      <div class="exp-connector">
+        <div class="exp-connector-line"></div>
+        <div class="exp-connector-dot"></div>
+        <div class="exp-connector-line"></div>
+        <div class="exp-connector-dot"></div>
+        <div class="exp-connector-line"></div>
+        <div class="exp-connector-dot"></div>
+        <div class="exp-connector-line"></div>
+        <div class="exp-connector-dot"></div>
+        <div class="exp-connector-line"></div>
+      </div>
+
+      <div class="exp-people">
+        <div class="exp-person paid">
+          <div class="exp-status paid">Paid</div>
+          <div class="exp-person-top">
+            <div class="exp-avatar">Y</div>
+            <div class="exp-person-name">You</div>
+          </div>
+          <div class="exp-person-amt">$21.00</div>
+        </div>
+        <div class="exp-person paid">
+          <div class="exp-status paid">Paid</div>
+          <div class="exp-person-top">
+            <div class="exp-avatar">A</div>
+            <div class="exp-person-name">Alex</div>
+          </div>
+          <div class="exp-person-amt">$21.00</div>
+        </div>
+        <div class="exp-person pending">
+          <div class="exp-status pending">Owes</div>
+          <div class="exp-person-top">
+            <div class="exp-avatar">S</div>
+            <div class="exp-person-name">Sam</div>
+          </div>
+          <div class="exp-person-amt">$21.00</div>
+        </div>
+        <div class="exp-person pending">
+          <div class="exp-status pending">Owes</div>
+          <div class="exp-person-top">
+            <div class="exp-avatar">J</div>
+            <div class="exp-person-name">Jordan</div>
+          </div>
+          <div class="exp-person-amt">$21.00</div>
+        </div>
+      </div>
+
+      <div class="exp-progress">
+        <div class="exp-progress-header">
+          <span class="exp-progress-label">Collected</span>
+          <span class="exp-progress-vals">$42 of $84</span>
+        </div>
+        <div class="exp-progress-bar">
+          <div class="exp-progress-fill"></div>
+        </div>
+        <div class="exp-progress-footer">
+          <span>2 of 4 settled up</span>
+          <span>50%</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Text -->
+    <div class="about-text tiers-tagline">
+      <div class="tiers-tagline-title">How It<br>Works</div>
+      <p>Add any shared expense — dinner, rent, a weekend trip — and Divvum splits it instantly across your circle.</p>
+      <p>Everyone gets notified and pays their share. Your Divvum Score updates in real time, rewarding you every time you settle up on time.</p>
+    </div>
+
+  </section>
 
   <!-- tiers section -->
   <section class="mint-section">
@@ -1436,6 +1734,21 @@
         document.body.classList.add('page-exit');
         setTimeout(function() { window.location.href = href; }, 400);
       });
+    });
+
+    // fade in about section when it comes into view
+    document.addEventListener('DOMContentLoaded', function() {
+      var about = document.querySelector('.about-section');
+      if (!about) return;
+      var observer = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            about.classList.add('visible');
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(about);
     });
 
     // tier card background hover + click-lock effects
