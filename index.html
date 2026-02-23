@@ -1086,7 +1086,28 @@
       main { padding: 40px 24px 32px; }
       h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); margin-bottom: 12px; line-height: 1.12; }
       .sub { font-size: 0.88rem; margin-bottom: 28px; max-width: 100%; }
-      .phone-wrap { margin-bottom: 24px; }
+      .phone-wrap {
+        animation: none;
+        transform: none;
+        max-height: 384px;
+        overflow: hidden;
+        margin-bottom: 16px;
+        position: relative;
+        padding: 12px 12px 0;
+      }
+      .phone-wrap::after {
+        display: block;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: 110px;
+        background: linear-gradient(to bottom, transparent 0%, #f2f0ef 100%);
+        filter: none;
+        border-radius: 0;
+        z-index: 10;
+      }
       .download-group { width: 100%; display: flex; justify-content: center; }
       .dl-btn img { height: 42px; }
 
