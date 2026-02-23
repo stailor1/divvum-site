@@ -537,6 +537,13 @@
 
     /* DOWNLOAD BUTTONS */
     .download-group { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; position: relative; }
+    .scroll-arrow {
+      display: none;
+    }
+    @keyframes bounce-arrow {
+      0%, 100% { transform: translateY(0); opacity: 0.75; }
+      50% { transform: translateY(4px); opacity: 1; }
+    }
     .download-group .dl-btn img {
       transition: transform 0.3s ease;
     }
@@ -1306,6 +1313,16 @@
 
       /* Hero */
       .welcome-tagline, .welcome-sub { display: none; }
+      .auth-btn, .w-divider { display: none; }
+      .scroll-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        color: var(--navy);
+        animation: bounce-arrow 1.4s ease-in-out infinite;
+      }
+      .scroll-arrow svg { width: 32px; height: 32px; stroke-width: 2.5; }
       main { padding: 40px 24px 32px; }
       h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); margin-bottom: 12px; line-height: 1.12; }
       .sub { font-size: 0.88rem; margin-bottom: 28px; max-width: 100%; }
@@ -1457,6 +1474,12 @@
                 Continue with Email
               </button>
 
+              <div class="scroll-arrow">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+
             </div>
 
           </div>
@@ -1469,6 +1492,7 @@
         <img src="Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" style="height:52px; width:auto; max-width:320px; display:block;" />
       </a>
     </div>
+
   </main>
 
   <!-- about section -->
