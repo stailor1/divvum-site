@@ -26,6 +26,24 @@
       font-weight: 400;
       font-style: normal;
     }
+    @font-face {
+      font-family: 'GilroySemiBold';
+      src: url('Gilroy-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'GilroyBold';
+      src: url('Gilroy-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'GilroyBlack';
+      src: url('Gilroy-Black.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -998,7 +1016,7 @@
     .lb-pod-2 .lb-pod-avatar { border-color: #9ca3af; background: #f3f4f6; color: #6b7280; }
     .lb-pod-3 .lb-pod-avatar { border-color: #b97333; background: #fdf0e3; color: #92581a; }
     .lb-pod-rank {
-      font-family: 'GilroyLight', sans-serif;
+      font-family: 'GilroyBold', sans-serif;
       font-size: 0.72rem;
       font-weight: 800;
       color: var(--gray);
@@ -1007,6 +1025,7 @@
     .lb-pod-2 .lb-pod-rank { color: #9ca3af; }
     .lb-pod-3 .lb-pod-rank { color: #b97333; }
     .lb-pod-name {
+      font-family: 'GilroyBlack', sans-serif;
       font-size: 0.78rem;
       font-weight: 600;
       color: var(--navy);
@@ -1014,7 +1033,7 @@
       transition: color 0.5s ease;
     }
     .lb-pod-score {
-      font-family: 'GilroyLight', sans-serif;
+      font-family: 'GilroyBold', sans-serif;
       font-size: 0.8rem;
       font-weight: 700;
       color: var(--teal-dark);
@@ -1070,6 +1089,7 @@
     .lb-ravatar svg { width: 52%; height: 52%; }
     .lb-ravatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .lb-rname {
+      font-family: 'GilroyBold', sans-serif;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--navy);
@@ -1235,7 +1255,9 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      overflow: hidden;
     }
+    .exp-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .exp-person.pending .exp-avatar { background: #e5e5e5; color: var(--gray); }
     .exp-person-name { font-size: 0.76rem; font-weight: 600; color: var(--navy); }
     .exp-person-amt {
@@ -1526,41 +1548,6 @@
         <div class="exp-connector-line"></div>
       </div>
 
-      <div class="exp-people">
-        <div class="exp-person paid">
-          <div class="exp-status paid">Paid</div>
-          <div class="exp-person-top">
-            <div class="exp-avatar">Y</div>
-            <div class="exp-person-name">You</div>
-          </div>
-          <div class="exp-person-amt">$21.00</div>
-        </div>
-        <div class="exp-person paid">
-          <div class="exp-status paid">Paid</div>
-          <div class="exp-person-top">
-            <div class="exp-avatar">A</div>
-            <div class="exp-person-name">Alex</div>
-          </div>
-          <div class="exp-person-amt">$21.00</div>
-        </div>
-        <div class="exp-person pending">
-          <div class="exp-status pending">Owes</div>
-          <div class="exp-person-top">
-            <div class="exp-avatar">S</div>
-            <div class="exp-person-name">Sam</div>
-          </div>
-          <div class="exp-person-amt">$21.00</div>
-        </div>
-        <div class="exp-person pending">
-          <div class="exp-status pending">Owes</div>
-          <div class="exp-person-top">
-            <div class="exp-avatar">J</div>
-            <div class="exp-person-name">Jordan</div>
-          </div>
-          <div class="exp-person-amt">$21.00</div>
-        </div>
-      </div>
-
       <div class="exp-progress">
         <div class="exp-progress-header">
           <span class="exp-progress-label">Collected</span>
@@ -1572,6 +1559,41 @@
         <div class="exp-progress-footer">
           <span>2 of 4 settled up</span>
           <span>50%</span>
+        </div>
+      </div>
+
+      <div class="exp-people">
+        <div class="exp-person paid">
+          <div class="exp-status paid">Paid</div>
+          <div class="exp-person-top">
+            <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=23" alt="You" /></div>
+            <div class="exp-person-name">You</div>
+          </div>
+          <div class="exp-person-amt">$21.00</div>
+        </div>
+        <div class="exp-person paid">
+          <div class="exp-status paid">Paid</div>
+          <div class="exp-person-top">
+            <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=33" alt="Alex" /></div>
+            <div class="exp-person-name">Alex</div>
+          </div>
+          <div class="exp-person-amt">$21.00</div>
+        </div>
+        <div class="exp-person pending">
+          <div class="exp-status pending">Owes</div>
+          <div class="exp-person-top">
+            <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=45" alt="Sam" /></div>
+            <div class="exp-person-name">Sam</div>
+          </div>
+          <div class="exp-person-amt">$21.00</div>
+        </div>
+        <div class="exp-person pending">
+          <div class="exp-status pending">Owes</div>
+          <div class="exp-person-top">
+            <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=56" alt="Jordan" /></div>
+            <div class="exp-person-name">Jordan</div>
+          </div>
+          <div class="exp-person-amt">$21.00</div>
         </div>
       </div>
 
@@ -1675,29 +1697,29 @@
 
         <div class="lb-pod lb-pod-2">
           <div class="lb-pod-avatar">
-            <img src="https://i.pravatar.cc/150?img=33" alt="Alex M." />
+            <img src="https://i.pravatar.cc/150?img=33" alt="Alex" />
           </div>
           <div class="lb-pod-rank">2</div>
-          <div class="lb-pod-name">Alex M.</div>
+          <div class="lb-pod-name">Alex</div>
           <div class="lb-pod-score">982 scr</div>
         </div>
 
         <div class="lb-pod lb-pod-1">
           <div class="lb-pod-crown">♛</div>
           <div class="lb-pod-avatar">
-            <img src="https://i.pravatar.cc/150?img=11" alt="Brennan W." />
+            <img src="https://i.pravatar.cc/150?img=11" alt="Brennan" />
           </div>
           <div class="lb-pod-rank">1</div>
-          <div class="lb-pod-name">Brennan W.</div>
+          <div class="lb-pod-name">Brennan</div>
           <div class="lb-pod-score">1,204 scr</div>
         </div>
 
         <div class="lb-pod lb-pod-3">
           <div class="lb-pod-avatar">
-            <img src="https://i.pravatar.cc/150?img=45" alt="Sam R." />
+            <img src="https://i.pravatar.cc/150?img=45" alt="Sam" />
           </div>
           <div class="lb-pod-rank">3</div>
-          <div class="lb-pod-name">Sam R.</div>
+          <div class="lb-pod-name">Sam</div>
           <div class="lb-pod-score">847 scr</div>
         </div>
 
@@ -1708,48 +1730,48 @@
 
         <div class="lb-row">
           <span class="lb-rnum">4</span>
-          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=7" alt="Chris T." /></div>
-          <span class="lb-rname">Chris T.</span>
+          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=7" alt="Chris" /></div>
+          <span class="lb-rname">Chris</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:61%"></div></div>
           <span class="lb-rscore">731 scr</span>
         </div>
 
         <div class="lb-row">
           <span class="lb-rnum">5</span>
-          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=15" alt="Derrick P." /></div>
-          <span class="lb-rname">Derrick P.</span>
+          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=15" alt="Derrick" /></div>
+          <span class="lb-rname">Derrick</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:53%"></div></div>
           <span class="lb-rscore">644 scr</span>
         </div>
 
         <div class="lb-row">
           <span class="lb-rnum">6</span>
-          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=26" alt="Morgan L." /></div>
-          <span class="lb-rname">Morgan L.</span>
+          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=26" alt="Morgan" /></div>
+          <span class="lb-rname">Morgan</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:44%"></div></div>
           <span class="lb-rscore">528 scr</span>
         </div>
 
         <div class="lb-row">
           <span class="lb-rnum">7</span>
-          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=48" alt="Taylor W." /></div>
-          <span class="lb-rname">Taylor W.</span>
+          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=48" alt="Taylor" /></div>
+          <span class="lb-rname">Taylor</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:37%"></div></div>
           <span class="lb-rscore">441 scr</span>
         </div>
 
         <div class="lb-row">
           <span class="lb-rnum">8</span>
-          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=57" alt="Jamie S." /></div>
-          <span class="lb-rname">Jamie S.</span>
+          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=57" alt="Jamie" /></div>
+          <span class="lb-rname">Jamie</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:29%"></div></div>
           <span class="lb-rscore">348 scr</span>
         </div>
 
         <div class="lb-row">
           <span class="lb-rnum">9</span>
-          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=62" alt="Drew H." /></div>
-          <span class="lb-rname">Drew H.</span>
+          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=62" alt="Drew" /></div>
+          <span class="lb-rname">Drew</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:21%"></div></div>
           <span class="lb-rscore">254 scr</span>
         </div>
