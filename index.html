@@ -1366,6 +1366,22 @@
 
     /* Section nav pill */
 
+    /* ---- Scroll Reveal ---- */
+    [data-reveal] {
+      opacity: 0;
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+    [data-reveal="up"]    { transform: translateY(22px); }
+    [data-reveal="left"]  { transform: translateX(-22px); }
+    [data-reveal="right"] { transform: translateX(22px); }
+    [data-reveal="pop"]   { transform: scale(0.88) translateY(14px); }
+    [data-reveal].revealed { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { transition: opacity 0.3s ease !important; transform: none !important; }
+    }
+
     @media (max-width: 600px) {
       /* Nav */
       nav { padding: 14px 20px; }
@@ -1563,7 +1579,7 @@
     <!-- Graphic: split expense UI -->
     <div class="about-graphic">
 
-      <div class="exp-card">
+      <div class="exp-card" data-reveal="up" data-delay="0">
         <div class="exp-icon">🍽️</div>
         <div class="exp-info">
           <div class="exp-name">Dinner at Rosso's</div>
@@ -1572,7 +1588,7 @@
         <div class="exp-amount">$84.00</div>
       </div>
 
-      <div class="exp-connector">
+      <div class="exp-connector" data-reveal="up" data-delay="90">
         <div class="exp-connector-line"></div>
         <div class="exp-connector-dot"></div>
         <div class="exp-connector-line"></div>
@@ -1584,7 +1600,7 @@
         <div class="exp-connector-line"></div>
       </div>
 
-      <div class="exp-progress">
+      <div class="exp-progress" data-reveal="up" data-delay="180">
         <div class="exp-progress-header">
           <span class="exp-progress-label">Collected</span>
           <span class="exp-progress-vals">$42 | $84</span>
@@ -1599,7 +1615,7 @@
       </div>
 
       <div class="exp-people">
-        <div class="exp-person paid">
+        <div class="exp-person paid" data-reveal="up" data-delay="270">
           <div class="exp-status paid">Paid</div>
           <div class="exp-person-top">
             <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=23" alt="You" /></div>
@@ -1607,7 +1623,7 @@
           </div>
           <div class="exp-person-amt">$21.00</div>
         </div>
-        <div class="exp-person paid">
+        <div class="exp-person paid" data-reveal="up" data-delay="320">
           <div class="exp-status paid">Paid</div>
           <div class="exp-person-top">
             <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=33" alt="Alex" /></div>
@@ -1615,7 +1631,7 @@
           </div>
           <div class="exp-person-amt">$21.00</div>
         </div>
-        <div class="exp-person pending">
+        <div class="exp-person pending" data-reveal="up" data-delay="370">
           <div class="exp-status pending">Owes</div>
           <div class="exp-person-top">
             <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=45" alt="Sam" /></div>
@@ -1623,7 +1639,7 @@
           </div>
           <div class="exp-person-amt">$21.00</div>
         </div>
-        <div class="exp-person pending">
+        <div class="exp-person pending" data-reveal="up" data-delay="420">
           <div class="exp-status pending">Owes</div>
           <div class="exp-person-top">
             <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=56" alt="Jordan" /></div>
@@ -1636,7 +1652,7 @@
     </div>
 
     <!-- Text -->
-    <div class="about-text tiers-tagline">
+    <div class="about-text tiers-tagline" data-reveal="left" data-delay="80">
       <div class="tiers-tagline-title">How It<br>Works</div>
       <p>Paid for dinner? Covered the tab? Won a bet? Divvum will split the expense for you.</p>
       <p>Those who settle up before 48 hours earn Divvum points, our in app scoring metric that unclocks exclusive rewards and benefits.</p>
@@ -1647,7 +1663,7 @@
   <!-- tiers section -->
   <section class="mint-section">
     <div class="mint-blend mint-blend-default"></div>
-    <div class="tiers-tagline">
+    <div class="tiers-tagline" data-reveal="left" data-delay="0">
       <div class="tiers-tagline-title">Earned<br>Not Paid</div>
       <p>Divvum points shows how much your circle trusts you.</p>
       <p>Pay back on time or choose instant withdrawal to tier up, ensuring fixed rates, more reliabilty, and faster savings.</p>
@@ -1656,7 +1672,7 @@
     <div class="tiers-inner">
       <div class="tiers-grid">
 
-        <div class="tier-card tier-basic">
+        <div class="tier-card tier-basic" data-reveal="up" data-delay="80">
           <div class="tier-left">
             <div class="tier-badge">· Basic ·</div>
             <div class="tier-price">&lt; 500<span> scr</span></div>
@@ -1674,7 +1690,7 @@
           <div class="basic-entry-tag">· Entry Level · Standard ·</div>
         </div>
 
-        <div class="tier-card tier-gold">
+        <div class="tier-card tier-gold" data-reveal="up" data-delay="200">
           <div class="gold-orb"></div>
           <div class="tier-left">
             <div class="tier-badge">◆ Divvum Gold ◆</div>
@@ -1693,7 +1709,7 @@
           <div class="gold-elite-tag">◆ Premium Member · High Tier ◆</div>
         </div>
 
-        <div class="tier-card tier-black">
+        <div class="tier-card tier-black" data-reveal="up" data-delay="320">
           <div class="black-corner black-corner-tl"></div>
           <div class="black-corner black-corner-tr"></div>
           <div class="black-corner black-corner-bl"></div>
@@ -1731,7 +1747,7 @@
       <!-- Top 3 Podium -->
       <div class="lb-podium">
 
-        <div class="lb-pod lb-pod-2">
+        <div class="lb-pod lb-pod-2" data-reveal="pop" data-delay="200">
           <div class="lb-pod-avatar">
             <img src="https://i.pravatar.cc/150?img=33" alt="Alex" />
           </div>
@@ -1740,7 +1756,7 @@
           <div class="lb-pod-base">2</div>
         </div>
 
-        <div class="lb-pod lb-pod-1">
+        <div class="lb-pod lb-pod-1" data-reveal="pop" data-delay="0">
           <div class="lb-pod-crown">♛</div>
           <div class="lb-pod-avatar">
             <img src="https://i.pravatar.cc/150?img=11" alt="Brennan" />
@@ -1750,7 +1766,7 @@
           <div class="lb-pod-base">1</div>
         </div>
 
-        <div class="lb-pod lb-pod-3">
+        <div class="lb-pod lb-pod-3" data-reveal="pop" data-delay="350">
           <div class="lb-pod-avatar">
             <img src="https://i.pravatar.cc/150?img=45" alt="Sam" />
           </div>
@@ -1764,7 +1780,7 @@
       <!-- Rankings List -->
       <div class="lb-list">
 
-        <div class="lb-row">
+        <div class="lb-row" data-reveal="right" data-delay="100">
           <span class="lb-rnum">4</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=7" alt="Chris" /></div>
           <span class="lb-rname">Chris</span>
@@ -1772,7 +1788,7 @@
           <span class="lb-rscore">731 scr</span>
         </div>
 
-        <div class="lb-row">
+        <div class="lb-row" data-reveal="right" data-delay="180">
           <span class="lb-rnum">5</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=15" alt="Derrick" /></div>
           <span class="lb-rname">Derrick</span>
@@ -1780,7 +1796,7 @@
           <span class="lb-rscore">644 scr</span>
         </div>
 
-        <div class="lb-row">
+        <div class="lb-row" data-reveal="right" data-delay="260">
           <span class="lb-rnum">6</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=26" alt="Morgan" /></div>
           <span class="lb-rname">Morgan</span>
@@ -1788,7 +1804,7 @@
           <span class="lb-rscore">528 scr</span>
         </div>
 
-        <div class="lb-row">
+        <div class="lb-row" data-reveal="right" data-delay="340">
           <span class="lb-rnum">7</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=48" alt="Taylor" /></div>
           <span class="lb-rname">Taylor</span>
@@ -1796,7 +1812,7 @@
           <span class="lb-rscore">441 scr</span>
         </div>
 
-        <div class="lb-row">
+        <div class="lb-row" data-reveal="right" data-delay="420">
           <span class="lb-rnum">8</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=57" alt="Jamie" /></div>
           <span class="lb-rname">Jamie</span>
@@ -1804,7 +1820,7 @@
           <span class="lb-rscore">348 scr</span>
         </div>
 
-        <div class="lb-row">
+        <div class="lb-row" data-reveal="right" data-delay="500">
           <span class="lb-rnum">9</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=62" alt="Drew" /></div>
           <span class="lb-rname">Drew</span>
@@ -1816,7 +1832,7 @@
 
 
     </div>
-    <div class="lb-tagline">
+    <div class="lb-tagline" data-reveal="right" data-delay="0">
       <h2 class="lb-heading">Leader<br>board</h2>
       <p class="lb-sub">See how your Divvum score stacks up in your circle.</p>
       <p class="lb-blurb">Track repayment habits across your group in real time. Your score climbs every time you settle up and instant transfer.</p>
@@ -1921,6 +1937,22 @@
       }, { threshold: 0.1 });
       observer.observe(lb);
     });
+
+    // scroll reveal for all [data-reveal] elements
+    (function() {
+      var els = document.querySelectorAll('[data-reveal]');
+      if (!els.length) return;
+      var obs = new IntersectionObserver(function(entries, ob) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          el.style.transitionDelay = (el.dataset.delay || '0') + 'ms';
+          el.classList.add('revealed');
+          ob.unobserve(el);
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function(el) { obs.observe(el); });
+    })();
   </script>
 </body>
 </html>
