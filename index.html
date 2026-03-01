@@ -129,16 +129,16 @@
       color: var(--teal-dark);
       margin-bottom: 18px;
       text-align: center;
-      margin-right: 1.00em;
       transition: color 0.5s ease;
     }
     .tiers-tagline p {
       font-family: 'Gilroy', sans-serif;
-      font-size: clamp(1rem, 1.3vw, 1.2rem);
+      font-size: clamp(1.15rem, 1.7vw, 1.4rem);
       font-weight: 300;
       line-height: 1.7;
       color: var(--navy);
       margin-bottom: 16px;
+      text-align: center;
       transition: color 0.5s ease;
     }
     .tiers-tagline p:last-child {
@@ -755,8 +755,42 @@
     .tier-basic .tier-price { color: var(--navy); }
     .tier-btn-basic { background: var(--teal-light); color: var(--teal-dark); }
 
+    /* Compact basic cards — half height, tighter gap between the pair */
+    .tier-basic, .tier-basic-plus {
+      padding: 8px 24px 8px;
+    }
+    .tier-basic { margin-bottom: -8px; }
+    .tier-basic .tier-left, .tier-basic-plus .tier-left { margin-bottom: 8px; }
+    .tier-basic .tier-price, .tier-basic-plus .tier-price { font-size: 1.2rem; }
+    .tier-basic .tier-features li, .tier-basic-plus .tier-features li { padding: 3px 0; }
+    .tier-basic .tier-dots, .tier-basic-plus .tier-dots { display: none; }
+    .tier-basic .basic-entry-tag, .tier-basic-plus .basic-entry-tag { margin-top: -2px; }
+
+    /* Basic+ */
+    .tier-basic-plus {
+      background: #eaf7f4;
+      box-shadow: 0 4px 24px rgba(26,188,156,0.13);
+      border: 1.5px solid rgba(26,188,156,0.35);
+    }
+    .tier-basic-plus:hover { box-shadow: 0 16px 40px rgba(26,188,156,0.22); }
+    .tier-basic-plus .tier-badge {
+      color: var(--teal-dark);
+      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1.5px solid rgba(26,188,156,0.55);
+      padding: 4px 14px;
+      border-radius: 100px;
+      background: rgba(26,188,156,0.15);
+    }
+    .tier-basic-plus .tier-price { color: var(--navy); }
+    .tier-basic-plus .tier-features li { color: var(--navy); border-bottom-color: rgba(26,188,156,0.15); }
+    .tier-btn-basic-plus { background: rgba(26,188,156,0.18); color: var(--teal-dark); }
+
     /* Gold */
     .tier-gold {
+      padding: 16px 24px 14px;
       background: #fdf7e3;
       box-shadow: 0 8px 40px rgba(201,162,39,0.2);
       border: 1.5px solid rgba(201,162,39,0.45);
@@ -954,21 +988,22 @@
       text-transform: uppercase;
       color: var(--teal-dark);
       margin-bottom: 18px;
+      text-align: center;
       transition: color 0.5s ease;
     }
     .lb-sub {
       font-family: 'Gilroy', sans-serif;
-      font-size: clamp(1rem, 1.3vw, 1.2rem);
+      font-size: clamp(1.15rem, 1.7vw, 1.4rem);
       font-weight: 300;
       color: var(--navy);
       line-height: 1.7;
       margin-bottom: 16px;
-      text-align: left;
+      text-align: center;
       transition: color 0.5s ease;
     }
     .lb-blurb {
       font-family: 'Gilroy', sans-serif;
-      font-size: clamp(1rem, 1.3vw, 1.2rem);
+      font-size: clamp(1.15rem, 1.7vw, 1.4rem);
       font-weight: 300;
       color: var(--navy);
       line-height: 1.7;
@@ -1441,7 +1476,7 @@
       .about-section::after { height: 160px; }
       .about-graphic { width: 100%; order: 2; }
       .about-text { width: 100%; text-align: center; order: 1; }
-      .about-text p { text-align: center; font-size: 0.85rem; line-height: 1.6; }
+      .about-text p { text-align: center; font-size: 1rem; line-height: 1.6; }
       .about-text .tiers-tagline-title { margin-right: 0; font-size: 1.3rem; margin-bottom: 10px; }
 
       /* Tiers section */
@@ -1450,7 +1485,7 @@
       .mint-blend { height: 200px; }
       .tiers-tagline { width: 100%; padding-right: 0; text-align: center; }
       .tiers-tagline-title { margin-right: 0; font-size: 1.3rem; margin-bottom: 10px; }
-      .tiers-tagline p { text-align: center; font-size: 0.85rem; line-height: 1.6; margin-bottom: 10px; }
+      .tiers-tagline p { text-align: center; font-size: 1rem; line-height: 1.6; margin-bottom: 10px; }
       .tiers-inner { width: 100%; padding: 0; }
       .tiers-eyebrow { font-size: 0.65rem; margin-bottom: 6px; }
       .tiers-heading { font-size: clamp(1.4rem, 6vw, 1.9rem); margin-bottom: 16px; }
@@ -1463,8 +1498,8 @@
       .lb-content { width: 100%; }
       .lb-tagline { width: 100%; text-align: center; order: -1; }
       .lb-heading { text-align: center; font-size: 1.3rem; margin-bottom: 10px; }
-      .lb-sub { text-align: center; font-size: 0.85rem; line-height: 1.6; margin-bottom: 10px; }
-      .lb-blurb { text-align: center; font-size: 0.85rem; line-height: 1.6; }
+      .lb-sub { text-align: center; font-size: 1rem; line-height: 1.6; margin-bottom: 10px; }
+      .lb-blurb { text-align: center; font-size: 1rem; line-height: 1.6; }
 
       /* Leaderboard top/bottom blends */
       .lb-top-blend { height: 100px; }
@@ -1660,8 +1695,9 @@
     <!-- Text -->
     <div class="about-text tiers-tagline" data-reveal="left" data-delay="80">
       <div class="tiers-tagline-title">How It<br>Works</div>
-      <p>Paid for dinner? Covered the tab? Won a bet? Divvum will split the expense for you.</p>
-      <p>Those who settle up before 48 hours earn Divvum points, our in app scoring metric that unclocks exclusive rewards and benefits.</p>
+      <p>Paid for dinner? Covered the tab? Won a bet? </p>
+      <p>Divvum will split the expense how you like.</p>
+      
     </div>
 
   </section>
@@ -1671,8 +1707,7 @@
     <div class="mint-blend mint-blend-default"></div>
     <div class="tiers-tagline" data-reveal="left" data-delay="0">
       <div class="tiers-tagline-title">Earned<br>Not Paid</div>
-      <p>Divvum points shows how much your circle trusts you.</p>
-      <p>Pay back on time or choose instant withdrawal to tier up, ensuring fixed rates, more reliabilty, and faster savings.</p>
+      <p>Divvum's tier system rewards users for their payment and social activity on in the app.
 
     </div>
     <div class="tiers-inner">
@@ -1681,30 +1716,44 @@
         <div class="tier-card tier-basic" data-reveal="up" data-delay="80">
           <div class="tier-left">
             <div class="tier-badge">· Basic ·</div>
-            <div class="tier-price">&lt; 500<span> scr</span></div>
+            <div class="tier-price">&lt; 250<span> scr</span></div>
           </div>
           <ul class="tier-features">
-            <li>2.50% instant withdraw rate</li>
-            <li>-</li>
-            <li>-</li>
+            <li>2.00% instant withdraw rate</li>
           </ul>
           <div class="tier-dots">
             <span class="tier-dot" style="background:#1abc9c;"></span>
             <span class="tier-dot" style="background:#d1f2eb;"></span>
             <span class="tier-dot" style="background:#0d1f1a;"></span>
           </div>
-          <div class="basic-entry-tag">· Entry Level · Standard ·</div>
+          <div class="basic-entry-tag">· New Member ·</div>
         </div>
 
-        <div class="tier-card tier-gold" data-reveal="up" data-delay="200">
+        <div class="tier-card tier-basic-plus" data-reveal="up" data-delay="180">
+          <div class="tier-left">
+            <div class="tier-badge">· Basic+ ·</div>
+            <div class="tier-price">250+<span> scr</span></div>
+          </div>
+          <ul class="tier-features">
+            <li>Monthly Recap</li>
+          </ul>
+          <div class="tier-dots">
+            <span class="tier-dot" style="background:#1abc9c;"></span>
+            <span class="tier-dot" style="background:#d1f2eb;"></span>
+            <span class="tier-dot" style="background:#0d1f1a;"></span>
+          </div>
+          <div class="basic-entry-tag">· Rising Member ·</div>
+        </div>
+
+        <div class="tier-card tier-gold" data-reveal="up" data-delay="300">
           <div class="gold-orb"></div>
           <div class="tier-left">
             <div class="tier-badge">◆ Divvum Gold ◆</div>
             <div class="tier-price">500+<span> scr</span></div>
           </div>
           <ul class="tier-features">
-            <li>In app statistics</li>
-            <li>Unlock themes</li>
+            <li>Full Profile Statistics</li>
+            <li>Unlock Gold Theme</li>
             <li>-</li>
           </ul>
           <div class="tier-dots">
@@ -1715,7 +1764,7 @@
           <div class="gold-elite-tag">◆ Premium Member · High Tier ◆</div>
         </div>
 
-        <div class="tier-card tier-black" data-reveal="up" data-delay="320">
+        <div class="tier-card tier-black" data-reveal="up" data-delay="420">
           <div class="black-corner black-corner-tl"></div>
           <div class="black-corner black-corner-tr"></div>
           <div class="black-corner black-corner-bl"></div>
@@ -1726,9 +1775,9 @@
             <div class="tier-price">1,000+<span> scr</span></div>
           </div>
           <ul class="tier-features">
-            <li>1.25% instant withdraw rate</li>
-            <li>Up to 1.75% savings</li>
-            <li>Midnight theme & Black badge</li>
+            <li>1.35%-1.70% Instant Withdraw Rate</li>
+            <li>Up to 1.65% savings</li>
+            <li>Divvum Black Badge</li>
           </ul>
           <div class="tier-dots">
             <span class="tier-dot" style="background:#07111e;"></span>
@@ -1797,7 +1846,7 @@
         <div class="lb-row" data-reveal="right" data-delay="180">
           <span class="lb-rnum">5</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=15" alt="Derrick" /></div>
-          <span class="lb-rname">Derrick</span>
+          <span class="lb-rname">Sophia</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:53%"></div></div>
           <span class="lb-rscore">644 scr</span>
         </div>
@@ -1812,7 +1861,7 @@
 
         <div class="lb-row" data-reveal="right" data-delay="340">
           <span class="lb-rnum">7</span>
-          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=48" alt="Taylor" /></div>
+          <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=48" alt="Luciano" /></div>
           <span class="lb-rname">Taylor</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:37%"></div></div>
           <span class="lb-rscore">441 scr</span>
@@ -1821,7 +1870,7 @@
         <div class="lb-row" data-reveal="right" data-delay="420">
           <span class="lb-rnum">8</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=57" alt="Jamie" /></div>
-          <span class="lb-rname">Jamie</span>
+          <span class="lb-rname">James</span>
           <div class="lb-rbar"><div class="lb-rbar-fill" style="width:29%"></div></div>
           <span class="lb-rscore">348 scr</span>
         </div>
@@ -1840,8 +1889,7 @@
     </div>
     <div class="lb-tagline" data-reveal="right" data-delay="0">
       <h2 class="lb-heading">Leader<br>board</h2>
-      <p class="lb-sub">See how your Divvum score stacks up in your circle.</p>
-      <p class="lb-blurb">Track repayment habits across your group in real time. Your score climbs every time you settle up and instant transfer.</p>
+      <p class="lb-sub">See how your reliabilty stacks up against friends.</p>
     </div>
     <div class="lb-blend lb-blend-default"></div>
   </section>
