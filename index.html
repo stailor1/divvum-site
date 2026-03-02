@@ -271,7 +271,7 @@
       font-family: 'DM Sans', sans-serif;
       font-size: clamp(2.6rem, 6vw, 4.2rem);
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.01em;
       line-height: 1.08;
       margin-bottom: 20px;
       position: relative;
@@ -755,38 +755,46 @@
     .tier-basic .tier-price { color: var(--navy); }
     .tier-btn-basic { background: var(--teal-light); color: var(--teal-dark); }
 
-    /* Compact basic cards — half height, tighter gap between the pair */
-    .tier-basic, .tier-basic-plus {
-      padding: 8px 24px 8px;
+    /* Combined basic card */
+    .tier-basic-combined {
+      background: #f2f0ef;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
     }
-    .tier-basic { margin-bottom: -8px; }
-    .tier-basic .tier-left, .tier-basic-plus .tier-left { margin-bottom: 8px; }
-    .tier-basic .tier-price, .tier-basic-plus .tier-price { font-size: 1.2rem; }
-    .tier-basic .tier-features li, .tier-basic-plus .tier-features li { padding: 3px 0; }
-    .tier-basic .tier-dots, .tier-basic-plus .tier-dots { display: none; }
-    .tier-basic .basic-entry-tag, .tier-basic-plus .basic-entry-tag { margin-top: -2px; }
-
-    /* Basic+ */
-    .tier-basic-plus {
-      background: #eaf7f4;
-      box-shadow: 0 4px 24px rgba(26,188,156,0.13);
-      border: 1.5px solid rgba(26,188,156,0.35);
+    .tier-basic-combined:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.13); }
+    .tier-basic-half {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      gap: 6px;
     }
-    .tier-basic-plus:hover { box-shadow: 0 16px 40px rgba(26,188,156,0.22); }
-    .tier-basic-plus .tier-badge {
+    .tier-basic-half .tier-left { margin-bottom: 0; }
+    .tier-basic-half .tier-price { font-size: 1.3rem; }
+    .tier-basic-half .tier-features { margin-bottom: 0; }
+    .tier-basic-half .tier-features li { padding: 2px 0; }
+    .tier-basic-half .basic-entry-tag { margin-top: 8px; }
+    .tier-basic-sep {
+      height: 1px;
+      background: rgba(26,188,156,0.2);
+      margin: 0;
+      flex-shrink: 0;
+    }
+    .tier-basic-combined .tier-badge {
       color: var(--teal-dark);
       letter-spacing: 0.14em;
       font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      border: 1.5px solid rgba(26,188,156,0.55);
+      border: 1.5px solid rgba(26,188,156,0.45);
       padding: 4px 14px;
       border-radius: 100px;
-      background: rgba(26,188,156,0.15);
+      background: rgba(26,188,156,0.1);
     }
-    .tier-basic-plus .tier-price { color: var(--navy); }
-    .tier-basic-plus .tier-features li { color: var(--navy); border-bottom-color: rgba(26,188,156,0.15); }
-    .tier-btn-basic-plus { background: rgba(26,188,156,0.18); color: var(--teal-dark); }
+    .tier-basic-combined .tier-price { color: var(--navy); }
 
     /* Gold */
     .tier-gold {
@@ -1713,36 +1721,30 @@
     <div class="tiers-inner">
       <div class="tiers-grid">
 
-        <div class="tier-card tier-basic" data-reveal="up" data-delay="80">
-          <div class="tier-left">
-            <div class="tier-badge">· Basic ·</div>
-            <div class="tier-price">&lt; 250<span> pts</span></div>
-          </div>
-          <ul class="tier-features">
-            <li>2.00% Instant Withdrawal Rate</li>
-          </ul>
-          <div class="tier-dots">
-            <span class="tier-dot" style="background:#1abc9c;"></span>
-            <span class="tier-dot" style="background:#d1f2eb;"></span>
-            <span class="tier-dot" style="background:#0d1f1a;"></span>
-          </div>
-          <div class="basic-entry-tag">· New Member ·</div>
-        </div>
+        <div class="tier-card tier-basic-combined" data-reveal="up" data-delay="80">
 
-        <div class="tier-card tier-basic-plus" data-reveal="up" data-delay="180">
-          <div class="tier-left">
-            <div class="tier-badge">· Basic+ ·</div>
-            <div class="tier-price">250+<span> pts</span></div>
+          <div class="tier-basic-half">
+            <div class="tier-left">
+              <div class="tier-badge">· Standard ·</div>
+              <div class="tier-price">&lt; 250<span> pts</span></div>
+            </div>
+            <ul class="tier-features">
+              <li>2.00% Instant Withdrawal Rate</li>
+            </ul>
           </div>
-          <ul class="tier-features">
-            <li>Monthly Recap</li>
-          </ul>
-          <div class="tier-dots">
-            <span class="tier-dot" style="background:#1abc9c;"></span>
-            <span class="tier-dot" style="background:#d1f2eb;"></span>
-            <span class="tier-dot" style="background:#0d1f1a;"></span>
+
+          <div class="tier-basic-sep"></div>
+
+          <div class="tier-basic-half">
+            <div class="tier-left">
+              <div class="tier-price">250+<span> pts</span></div>
+            </div>
+            <ul class="tier-features">
+              <li>Monthly Recap</li>
+            </ul>
+            <div class="basic-entry-tag">· Rising Member ·</div>
           </div>
-          <div class="basic-entry-tag">· Rising Member ·</div>
+
         </div>
 
         <div class="tier-card tier-gold" data-reveal="up" data-delay="300">
