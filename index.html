@@ -319,22 +319,33 @@
 
     .phone {
       width: 280px;
-      background: #000000;
-      border-radius: 47px;
-      box-shadow: 0 0 0 10px var(--navy), 0 40px 80px rgba(0,0,0,0.22);
+      background: white;
+      border-radius: 54px;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.12),
+        0 0 0 2px #4a4a4a,
+        0 0 0 12px var(--navy),
+        0 50px 100px rgba(0,0,0,0.30);
       overflow: hidden;
+      position: relative;
     }
 
     .phone-bar {
-      height: 34px;
-      background: #000;
+      height: 42px;
+      background: white;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .pill { width: 84px; height: 10px; background: #1a1a1a; border-radius: 100px; }
+    .pill {
+      width: 94px;
+      height: 28px;
+      background: #080808;
+      border-radius: 20px;
+      margin-top: 4px;
+    }
 
-    .screen { padding: 0; background: #000; min-height: 560px; }
+    .screen { padding: 0; background: white; min-height: 560px; }
 
     /* WELCOME SCREEN */
     .welcome-screen {
@@ -546,6 +557,98 @@
     .s-tag {
       margin-left: auto; background: #ffeaea; color: #cc3333;
       border-radius: 100px; font-size: 0.52rem; font-weight: 600; padding: 2px 7px;
+    }
+
+    /* PAYMENT SCREEN */
+    .pay-screen {
+      display: flex;
+      flex-direction: column;
+      height: 560px;
+      background: white;
+    }
+    .pay-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px 8px;
+    }
+    .pay-topbar-center { display: flex; align-items: center; gap: 4px; }
+    .pay-topbar-icon {
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--navy);
+    }
+    .pay-topbar-divider {
+      width: 1px; height: 16px;
+      background: rgba(0,0,0,0.15);
+      margin: 0 2px;
+    }
+    .pay-avatar-sm {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .pay-avatar-sm img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pay-amount-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+    }
+    .pay-amount {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 3.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .pay-numpad {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 7px;
+      padding: 0 14px;
+      margin-bottom: 8px;
+    }
+    .pay-key {
+      background: #f2f2f2;
+      border-radius: 14px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .pay-actions {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 7px;
+      padding: 0 14px 16px;
+    }
+    .pay-btn-secondary {
+      background: #f2f2f2;
+      border: none;
+      border-radius: 100px;
+      height: 54px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--teal-dark);
+    }
+    .pay-btn-primary {
+      background: var(--teal);
+      border: none;
+      border-radius: 100px;
+      height: 54px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
     }
 
     /* floating bubbles */
@@ -933,7 +1036,7 @@
 /* LEADERBOARD SECTION */
     .lb-section {
       background: var(--bg-primary);
-      padding: 220px 48px 140px;
+      padding: 100px 48px 120px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1656,54 +1759,69 @@
       <div class="phone">
         <div class="phone-bar"><div class="pill"></div></div>
         <div class="screen">
-          <div class="welcome-screen">
+          <div class="pay-screen">
 
-            <div class="welcome-hero">
-              <div class="hero-orb"></div>
-              <div class="hero-icon-wrap">
-                <svg viewBox="0 0 36 36" fill="none">
-                  <path d="M8 18 L14 24 L28 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <div class="pay-topbar">
+              <div class="pay-topbar-icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <rect x="3" y="2" width="10" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M16 6.5c1.4 1.2 2.3 3 2.3 4.5s-.9 3.3-2.3 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M13.5 8.5c.7.7 1.1 1.6 1.1 2.5s-.4 1.8-1.1 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h1>DIVV<span>UM</span></h1>
+              <div class="pay-topbar-center">
+                <div class="pay-topbar-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--teal)">
+                    <circle cx="4" cy="4" r="1.4"/><circle cx="10" cy="4" r="1.4"/><circle cx="16" cy="4" r="1.4"/>
+                    <circle cx="4" cy="10" r="1.4"/><circle cx="10" cy="10" r="1.4"/><circle cx="16" cy="10" r="1.4"/>
+                    <circle cx="10" cy="16" r="1.4"/>
+                  </svg>
+                </div>
+                <div class="pay-topbar-divider"></div>
+                <div class="pay-topbar-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 3v14M5 3L3 5M5 3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 17V3M15 17l-2-2M15 17l2-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="pay-avatar-sm">
+                <img src="https://i.pravatar.cc/150?img=11" alt="Profile" />
+              </div>
             </div>
 
-            <div class="welcome-body">
-              <div class="welcome-tagline">Split smarter<br>Settle faster</div>
-              <div class="welcome-sub">Divvum makes splitting expenses with friends speedy &amp; effortless.</div>
+            <div class="pay-amount-area">
+              <div class="pay-amount">$38.67</div>
+            </div>
 
-              <button class="auth-btn btn-apple">
-                <svg class="btn-icon" viewBox="0 0 22 22" fill="white"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.42c1.32.07 2.22.74 2.98.8 1.14-.23 2.23-.93 3.44-.84 1.46.12 2.56.7 3.28 1.8-3.01 1.8-2.3 5.77.3 6.88-.57 1.52-1.31 3.01-2 4.22zM13 3.5c.18 1.76-1.29 3.2-2.98 3.36C9.8 5.1 11.36 3.5 13 3.5z"/></svg>
-                Continue with Apple
-              </button>
-
-              <button class="auth-btn btn-google">
-                <svg class="btn-icon" viewBox="0 0 22 22">
-                  <path d="M21.8 11.23c0-.78-.07-1.53-.19-2.25H11.2v4.26h5.96c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                  <path d="M11.2 22c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H1.35v2.84C3.16 19.51 6.96 22 11.2 22z" fill="#34A853"/>
-                  <path d="M5.04 13.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V6.06H1.35A10.95 10.95 0 0 0 .2 11c0 1.74.42 3.38 1.15 4.94l3.69-2.84z" fill="#FBBC05"/>
-                  <path d="M11.2 4.37c1.62 0 3.06.56 4.21 1.64l3.15-3.15C16.65.98 14.17 0 11.2 0 6.96 0 3.16 2.49 1.35 6.06l3.69 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                </svg>
-                Continue with Google
-              </button>
-
-              <div class="w-divider">
-                <div class="w-divider-line"></div>
-                <span class="w-divider-text">or</span>
-                <div class="w-divider-line"></div>
-              </div>
-
-              <button class="auth-btn btn-outline">
-                <svg class="btn-icon" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="3" stroke="#7a8899" stroke-width="1.5"/><path d="M2 7l9 6 9-6" stroke="#7a8899" stroke-width="1.5" stroke-linecap="round"/></svg>
-                Continue with Email
-              </button>
-
-              <div class="scroll-arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <div class="pay-numpad">
+              <div class="pay-key">1</div>
+              <div class="pay-key">2</div>
+              <div class="pay-key">3</div>
+              <div class="pay-key">4</div>
+              <div class="pay-key">5</div>
+              <div class="pay-key">6</div>
+              <div class="pay-key">7</div>
+              <div class="pay-key">8</div>
+              <div class="pay-key">9</div>
+              <div class="pay-key">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 4v17l2-1 2 1 2-1 2 1 2-1 2 1 2-1V4a1 1 0 00-1-1H5a1 1 0 00-1 1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
+              <div class="pay-key">0</div>
+              <div class="pay-key">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 6H8l-7 6 7 6h13V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M16 10l-4 4M12 10l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
 
+            <div class="pay-actions">
+              <button class="pay-btn-secondary">Pay</button>
+              <button class="pay-btn-primary">Request</button>
             </div>
 
           </div>
@@ -1800,7 +1918,6 @@
     <!-- Text -->
     <div class="about-text tiers-tagline" data-reveal="left" data-delay="80">
       <div class="tiers-tagline-title">How It Works</div>
-      <p>Paid for dinner? Covered the tab? Won a bet? </p>
       <p>Divvum will split the expense how you like.</p>
       
     </div>
@@ -1812,7 +1929,7 @@
 
     <div class="pts-text tiers-tagline" data-reveal="right" data-delay="80">
       <div class="tiers-tagline-title">Every Action Earns</div>
-      <p>Every move builds your score.</p>
+      <p>Every move increases your points.</p>
     </div>
 
     <div class="pts-graphic" data-reveal="left" data-delay="0">
@@ -1959,7 +2076,7 @@
     </div>
     <div class="tiers-tagline" data-reveal="right" data-delay="0">
       <div class="tiers-tagline-title">Earned Not Paid</div>
-      <p>Divvum's tier system rewards users for their payment and social activity in the app.
+      <p>Divvum's point based tier system rewards users.
 
     </div>
   </section>
