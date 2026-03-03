@@ -1036,7 +1036,7 @@
 
 /* LEADERBOARD SECTION */
     .lb-section {
-      background: var(--bg-primary);
+      background: #ffffff;
       padding: 100px 48px 120px;
       display: flex;
       align-items: center;
@@ -1059,10 +1059,10 @@
       opacity: 0;
       transition: opacity 0.5s ease;
     }
-    .lb-top-default { background: linear-gradient(to bottom, #f2f0ef 0%, rgba(242,240,239,0) 100%); opacity: 1; }
-    .lb-top-basic   { background: linear-gradient(to bottom, #f2f0ef 0%, rgba(209,242,235,0) 100%); }
-    .lb-top-gold    { background: linear-gradient(to bottom, #f2f0ef 0%, rgba(253,240,192,0) 100%); }
-    .lb-top-black   { background: linear-gradient(to bottom, #f2f0ef 0%, rgba(6,12,24,0) 100%); }
+    .lb-top-default { background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%); opacity: 1; }
+    .lb-top-basic   { background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%); }
+    .lb-top-gold    { background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%); }
+    .lb-top-black   { background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%); }
 
     body.hover-basic .lb-top-default { opacity: 0; }
     body.hover-basic .lb-top-basic   { opacity: 1; }
@@ -1078,7 +1078,7 @@
       opacity: 0;
       transition: opacity 0.5s ease;
     }
-    .lb-blend-default { height: 170px; background: linear-gradient(to bottom, transparent 0%, #f2f0ef 100%); opacity: 1; }
+    .lb-blend-default { height: 170px; background: linear-gradient(to bottom, transparent 0%, #ffffff 100%); opacity: 1; }
     .lb-content {
       width: 360px;
       flex-shrink: 0;
@@ -1248,6 +1248,7 @@
       background: #f2f0ef;
       border-radius: 14px;
       padding: 10px 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
       transition: none;
     }
     .lb-row:hover { background: #f2f0ef; }
@@ -1261,8 +1262,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(0,0,0,0.07);
-      border-radius: 8px;
       flex-shrink: 0;
       transition: color 0.5s ease;
     }
