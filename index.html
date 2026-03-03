@@ -932,7 +932,7 @@
 
 /* LEADERBOARD SECTION */
     .lb-section {
-      background: var(--teal-light);
+      background: var(--bg-primary);
       padding: 220px 48px 140px;
       display: flex;
       align-items: center;
@@ -1418,6 +1418,90 @@
 
     /* Section nav pill */
 
+    /* POINTS SECTION */
+    .pts-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 72px;
+      padding: 80px 48px 100px;
+      background: var(--bg-primary);
+      position: relative;
+    }
+    .pts-text {
+      width: 260px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 4;
+    }
+    .pts-graphic {
+      width: 340px;
+      flex-shrink: 0;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.10);
+      padding: 20px 20px 24px;
+      position: relative;
+      z-index: 4;
+    }
+    .pts-handle {
+      width: 36px; height: 4px;
+      background: #e5e5e5;
+      border-radius: 2px;
+      margin: 0 auto 22px;
+    }
+    .pts-category { margin-bottom: 18px; }
+    .pts-category:last-child { margin-bottom: 0; }
+    .pts-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .pts-row {
+      background: #f8f7f6;
+      border-radius: 13px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .pts-row:last-child { margin-bottom: 0; }
+    .pts-row-info { flex: 1; }
+    .pts-row-title { font-family: 'DM Sans', sans-serif; font-size: 0.84rem; font-weight: 700; color: var(--navy); }
+    .pts-row-sub { font-size: 0.67rem; color: var(--gray); margin-top: 1px; }
+    .pts-badge {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--teal-dark);
+      background: var(--teal-light);
+      padding: 5px 11px;
+      border-radius: 9px;
+      flex-shrink: 0;
+    }
+    .pts-badge-icon {
+      width: 32px; height: 32px;
+      background: #f0f0f0;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .pts-badge-2x {
+      background: rgba(13,31,26,0.08);
+      color: var(--navy);
+    }
+
     /* ---- Scroll Reveal ---- */
     [data-reveal] {
       opacity: 0;
@@ -1491,8 +1575,17 @@
       .about-text p { text-align: center; font-size: 1rem; line-height: 1.6; }
       .about-text .tiers-tagline-title { margin-right: 0; font-size: 1.3rem; margin-bottom: 10px; }
 
+      /* Points section */
+      .pts-section { flex-direction: column; padding: 56px 28px 72px; gap: 32px; }
+      .pts-text { width: 100%; text-align: center; }
+      .pts-text p { text-align: center; font-size: 1rem; }
+      .pts-text .tiers-tagline-title { font-size: 1.3rem; margin-bottom: 10px; }
+      .pts-graphic { width: 100%; }
+
       /* Tiers section */
       .mint-section { flex-direction: column; justify-content: flex-start; padding: 56px 28px 56px; gap: 20px; min-height: auto; }
+      .mint-section .tiers-inner { order: 2; }
+      .mint-section .tiers-tagline { order: 1; }
       .mint-section::before { height: 80px; }
       .mint-blend { height: 200px; }
       .tiers-tagline { width: 100%; padding-right: 0; text-align: center; }
@@ -1508,7 +1601,7 @@
       /* Leaderboard section */
       .lb-section { flex-direction: column; align-items: stretch; gap: 28px; padding: 72px 28px 56px; }
       .lb-content { width: 100%; }
-      .lb-tagline { width: 100%; text-align: center; order: -1; }
+      .lb-tagline { width: 100%; text-align: center; }
       .lb-heading { text-align: center; font-size: 1.3rem; margin-bottom: 10px; }
       .lb-sub { text-align: center; font-size: 1rem; line-height: 1.6; margin-bottom: 10px; }
       .lb-blurb { text-align: center; font-size: 1rem; line-height: 1.6; }
@@ -1714,14 +1807,85 @@
 
   </section>
 
+  <!-- points section -->
+  <section class="pts-section">
+
+    <div class="pts-text tiers-tagline" data-reveal="right" data-delay="80">
+      <div class="tiers-tagline-title">Every Action Earns</div>
+      <p>Every move builds your score.</p>
+    </div>
+
+    <div class="pts-graphic" data-reveal="left" data-delay="0">
+      <div class="pts-handle"></div>
+
+      <div class="pts-category">
+        <div class="pts-cat-header">💳 &nbsp;Payments</div>
+        <div class="pts-row">
+          <div class="pts-row-info">
+            <div class="pts-row-title">Pay within 24 hours</div>
+            <div class="pts-row-sub">Pay a request within 24 hours of receiving it</div>
+          </div>
+          <div class="pts-badge">+30</div>
+        </div>
+        <div class="pts-row">
+          <div class="pts-row-info">
+            <div class="pts-row-title">Pay within 24–48 hours</div>
+            <div class="pts-row-sub">Pay between 24 and 48 hours after receiving</div>
+          </div>
+          <div class="pts-badge">+15</div>
+        </div>
+        <div class="pts-row">
+          <div class="pts-row-info">
+            <div class="pts-row-title">Pay after 48 hours</div>
+            <div class="pts-row-sub">Pay a request more than 48 hours late</div>
+          </div>
+          <div class="pts-badge">+5</div>
+        </div>
+      </div>
+
+      <div class="pts-category">
+        <div class="pts-cat-header">⚡ &nbsp;Withdrawals</div>
+        <div class="pts-row">
+          <div class="pts-row-info">
+            <div class="pts-row-title">First instant withdrawal</div>
+            <div class="pts-row-sub">Your very first instant cash-out</div>
+          </div>
+          <div class="pts-badge">+50</div>
+        </div>
+        <div class="pts-row">
+          <div class="pts-row-info">
+            <div class="pts-row-title">Instant withdrawal</div>
+            <div class="pts-row-sub">Each subsequent instant withdrawal</div>
+          </div>
+          <div class="pts-badge">+20</div>
+        </div>
+      </div>
+
+      <div class="pts-category">
+        <div class="pts-cat-header">📅 &nbsp;Monthly Reset</div>
+        <div class="pts-row">
+          <div class="pts-row-info">
+            <div class="pts-row-title">Points refresh</div>
+            <div class="pts-row-sub">Points reduce by half on the 1st of each month</div>
+          </div>
+          <div class="pts-badge-icon">↺</div>
+        </div>
+        <div class="pts-row">
+          <div class="pts-row-info">
+            <div class="pts-row-title">Double points</div>
+            <div class="pts-row-sub">Gain double points on first 3 rewardable actions</div>
+          </div>
+          <div class="pts-badge pts-badge-2x">2×</div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
   <!-- tiers section -->
   <section class="mint-section">
     <div class="mint-blend mint-blend-default"></div>
-    <div class="tiers-tagline" data-reveal="left" data-delay="0">
-      <div class="tiers-tagline-title">Earned Not Paid</div>
-      <p>Divvum's tier system rewards users for their payment and social activity in the app.
-
-    </div>
     <div class="tiers-inner">
       <div class="tiers-grid">
 
@@ -1795,6 +1959,11 @@
 
       </div>
     </div>
+    <div class="tiers-tagline" data-reveal="right" data-delay="0">
+      <div class="tiers-tagline-title">Earned Not Paid</div>
+      <p>Divvum's tier system rewards users for their payment and social activity in the app.
+
+    </div>
   </section>
 
   <!-- LEADERBOARD SECTION -->
@@ -1803,6 +1972,10 @@
     <div class="lb-top-blend lb-top-basic"></div>
     <div class="lb-top-blend lb-top-gold"></div>
     <div class="lb-top-blend lb-top-black"></div>
+    <div class="lb-tagline" data-reveal="left" data-delay="0">
+      <h2 class="lb-heading">Leaderboard</h2>
+      <p class="lb-sub">See how your reliabilty stacks up against friends.</p>
+    </div>
     <div class="lb-content">
 
       <!-- Top 3 Podium -->
@@ -1841,7 +2014,7 @@
       <!-- Rankings List -->
       <div class="lb-list">
 
-        <div class="lb-row" data-reveal="right" data-delay="100">
+        <div class="lb-row" data-reveal="left" data-delay="100">
           <span class="lb-rnum">4</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=7" alt="Chris" /></div>
           <span class="lb-rname">Chris</span>
@@ -1849,7 +2022,7 @@
           <span class="lb-rscore">731 pts</span>
         </div>
 
-        <div class="lb-row" data-reveal="right" data-delay="180">
+        <div class="lb-row" data-reveal="left" data-delay="180">
           <span class="lb-rnum">5</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=15" alt="Derrick" /></div>
           <span class="lb-rname">Sophia</span>
@@ -1857,7 +2030,7 @@
           <span class="lb-rscore">644 pts</span>
         </div>
 
-        <div class="lb-row" data-reveal="right" data-delay="260">
+        <div class="lb-row" data-reveal="left" data-delay="260">
           <span class="lb-rnum">6</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=26" alt="Morgan" /></div>
           <span class="lb-rname">Morgan</span>
@@ -1865,7 +2038,7 @@
           <span class="lb-rscore">528 pts</span>
         </div>
 
-        <div class="lb-row" data-reveal="right" data-delay="340">
+        <div class="lb-row" data-reveal="left" data-delay="340">
           <span class="lb-rnum">7</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=48" alt="Luciano" /></div>
           <span class="lb-rname">Taylor</span>
@@ -1873,7 +2046,7 @@
           <span class="lb-rscore">441 pts</span>
         </div>
 
-        <div class="lb-row" data-reveal="right" data-delay="420">
+        <div class="lb-row" data-reveal="left" data-delay="420">
           <span class="lb-rnum">8</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=57" alt="Jamie" /></div>
           <span class="lb-rname">James</span>
@@ -1881,7 +2054,7 @@
           <span class="lb-rscore">348 pts</span>
         </div>
 
-        <div class="lb-row" data-reveal="right" data-delay="500">
+        <div class="lb-row" data-reveal="left" data-delay="500">
           <span class="lb-rnum">9</span>
           <div class="lb-ravatar"><img src="https://i.pravatar.cc/150?img=62" alt="Drew" /></div>
           <span class="lb-rname">Drew</span>
@@ -1893,10 +2066,6 @@
 
 
     </div>
-    <div class="lb-tagline" data-reveal="right" data-delay="0">
-      <h2 class="lb-heading">Leaderboard</h2>
-      <p class="lb-sub">See how your reliabilty stacks up against friends.</p>
-    </div>
     <div class="lb-blend lb-blend-default"></div>
   </section>
 
@@ -1904,6 +2073,7 @@
     <div class="footer-links">
       <a href="terms.html">Terms of Service</a>
       <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQ</a>
     </div>
     Divvum · © 2026
   </footer>
