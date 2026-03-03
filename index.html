@@ -294,6 +294,7 @@
     /* PHONE MOCKUP */
     .phone-wrap {
       position: relative;
+      margin-top: 28px;
       margin-bottom: 56px;
       animation: float 5s ease-in-out infinite;
       will-change: transform;
@@ -602,7 +603,7 @@
       font-size: 3.6rem;
       font-weight: 800;
       color: var(--navy);
-      letter-spacing: -0.02em;
+      letter-spacing: 0.04em;
       line-height: 1;
     }
     .pay-numpad {
@@ -1654,6 +1655,7 @@
         transform: none;
         max-height: 384px;
         overflow: hidden;
+        margin-top: 0;
         margin-bottom: 16px;
         position: relative;
         padding: 12px 12px 0;
@@ -1671,8 +1673,9 @@
         border-radius: 0;
         z-index: 10;
       }
-      .download-group { width: 100%; display: flex; justify-content: center; margin-top: 48px; }
+      .download-group { width: 100%; display: flex; justify-content: center; margin-top: 20px; margin-bottom: 20px; }
       .dl-btn img { height: 42px; }
+      .pay-numpad { pointer-events: none; }
 
       /* About section */
       .about-section { flex-direction: column; padding: 56px 28px 80px; gap: 32px; min-height: auto; }
@@ -1747,7 +1750,11 @@
 
   <main>
     <h1>Every payback<br><span class="accent">counts</span></h1>
-    <p class="sub">Pay fast. Earn back.</p>
+    <div class="download-group">
+      <a href="https://apps.apple.com" class="dl-btn" target="_blank" rel="noopener">
+        <img src="Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" style="height:52px; width:auto; max-width:320px; display:block;" />
+      </a>
+    </div>
 
     <div class="phone-wrap">
 
@@ -1796,27 +1803,27 @@
             </div>
 
             <div class="pay-amount-area">
-              <div class="pay-amount">$38.67</div>
+              <div class="pay-amount">$0.00</div>
             </div>
 
             <div class="pay-numpad">
-              <div class="pay-key">1</div>
-              <div class="pay-key">2</div>
-              <div class="pay-key">3</div>
-              <div class="pay-key">4</div>
-              <div class="pay-key">5</div>
-              <div class="pay-key">6</div>
-              <div class="pay-key">7</div>
-              <div class="pay-key">8</div>
-              <div class="pay-key">9</div>
-              <div class="pay-key">
+              <div class="pay-key" data-key="1">1</div>
+              <div class="pay-key" data-key="2">2</div>
+              <div class="pay-key" data-key="3">3</div>
+              <div class="pay-key" data-key="4">4</div>
+              <div class="pay-key" data-key="5">5</div>
+              <div class="pay-key" data-key="6">6</div>
+              <div class="pay-key" data-key="7">7</div>
+              <div class="pay-key" data-key="8">8</div>
+              <div class="pay-key" data-key="9">9</div>
+              <div class="pay-key" data-key="clear">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <path d="M4 4v17l2-1 2 1 2-1 2 1 2-1 2 1 2-1V4a1 1 0 00-1-1H5a1 1 0 00-1 1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                   <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
-              <div class="pay-key">0</div>
-              <div class="pay-key">
+              <div class="pay-key" data-key="0">0</div>
+              <div class="pay-key" data-key="backspace">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M21 6H8l-7 6 7 6h13V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                   <path d="M16 10l-4 4M12 10l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -1834,11 +1841,6 @@
       </div>
     </div>
 
-    <div class="download-group">
-      <a href="https://apps.apple.com" class="dl-btn" target="_blank" rel="noopener">
-        <img src="Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" style="height:52px; width:auto; max-width:320px; display:block;" />
-      </a>
-    </div>
 
   </main>
 
@@ -2301,6 +2303,34 @@
         });
       }, { threshold: 0.04 });
       els.forEach(function(el) { obs.observe(el); });
+    })();
+
+    // Phone keypad interaction
+    (function() {
+      var amountEl = document.querySelector('.pay-amount');
+      var cents = 0;
+
+      function updateDisplay() {
+        var d = Math.floor(cents / 100);
+        var c = cents % 100;
+        amountEl.textContent = '$' + d + '.' + (c < 10 ? '0' : '') + c;
+      }
+
+      document.querySelectorAll('.pay-key[data-key]').forEach(function(key) {
+        key.style.cursor = 'pointer';
+        key.addEventListener('click', function() {
+          var k = key.dataset.key;
+          if (k === 'backspace') {
+            cents = Math.floor(cents / 10);
+          } else if (k === 'clear') {
+            cents = 0;
+          } else {
+            var newCents = cents * 10 + parseInt(k);
+            if (newCents <= 9999) cents = newCents;
+          }
+          updateDisplay();
+        });
+      });
     })();
   </script>
 </body>
