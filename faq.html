@@ -47,14 +47,8 @@
       transition: background-color 0.3s;
     }
 
-    .logo {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--teal);
-      text-decoration: none;
-    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-img { height: 44px; width: auto; display: block; }
 
     .nav-pill {
       background: var(--teal);
@@ -187,7 +181,7 @@
 
     @media (max-width: 600px) {
       nav { padding: 14px 20px; }
-      .logo { font-size: 1.1rem; }
+      .logo-img { height: 44px; }
       .nav-pill { font-size: 0.68rem; padding: 5px 11px; }
     }
   </style>
@@ -195,7 +189,7 @@
 <body>
 
   <nav>
-    <a href="https://divvum.app" class="logo">DIVVUM</a>
+    <a href="https://divvum.app" class="logo"><img src="divvumlogo.png" alt="Divvum" class="logo-img" /></a>
     <div class="nav-pill">
       <div class="dot"></div>
       Now available

@@ -211,11 +211,13 @@
     }
 
     .logo {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--teal);
+      display: flex;
+      align-items: center;
+    }
+    .logo-img {
+      height: 44px;
+      width: auto;
+      display: block;
     }
 
     .nav-pill {
@@ -296,9 +298,6 @@
       position: relative;
       margin-top: 28px;
       margin-bottom: 56px;
-      animation: float 5s ease-in-out infinite;
-      will-change: transform;
-      transform: translateZ(0);
     }
     .phone-wrap::after {
       content: '';
@@ -1630,7 +1629,7 @@
     @media (max-width: 600px) {
       /* Nav */
       nav { padding: 14px 20px; }
-      .logo { font-size: 1.1rem; }
+      .logo-img { height: 44px; }
       .nav-pill { font-size: 0.68rem; padding: 5px 11px; }
       .nav-pill-text { position: relative; top: 1px; }
       .bubble { display: none; }
@@ -1673,7 +1672,7 @@
         border-radius: 0;
         z-index: 10;
       }
-      .download-group { width: 100%; display: flex; justify-content: center; margin-top: 20px; margin-bottom: 20px; }
+      .download-group { width: 100%; display: flex; justify-content: center; margin-top: 8px; margin-bottom: 20px; }
       .dl-btn img { height: 42px; }
       .pay-numpad { pointer-events: none; }
 
@@ -1740,7 +1739,7 @@
 <body>
 
   <nav>
-    <a class="logo" href="https://divvum.app" style="text-decoration:none;">DIVVUM</a>
+    <a class="logo" href="https://divvum.app" style="text-decoration:none;"><img src="divvumlogo.png" alt="Divvum" class="logo-img" /></a>
 
     <div class="nav-pill">
       <div class="dot"></div>
@@ -2210,6 +2209,10 @@
         setTimeout(function() { window.location.href = href; }, 400);
       });
     });
+
+    // Always start at top on load/refresh
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
 
     // fade in about section when it comes into view
     document.addEventListener('DOMContentLoaded', function() {
