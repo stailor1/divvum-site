@@ -150,7 +150,8 @@
     .mint-section.hover-basic {
       background-color: #d1f2eb;
     }
-    .mint-section.hover-basic .tier-basic {
+    .mint-section.hover-basic .tier-basic,
+    .mint-section.hover-basic .tier-basic-plus {
       box-shadow: 0 12px 60px rgba(26,188,156,0.28), 0 0 0 1.5px rgba(26,188,156,0.35);
     }
     .mint-section.hover-gold {
@@ -862,35 +863,13 @@
     .tier-basic .tier-price { color: var(--navy); }
     .tier-btn-basic { background: var(--teal-light); color: var(--teal-dark); }
 
-    /* Combined basic card */
-    .tier-basic-combined {
-      background: #f2f0ef;
+    /* Basic Plus */
+    .tier-basic-plus {
+      background: #eaf6f3;
       box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      display: flex;
-      flex-direction: column;
     }
-    .tier-basic-combined:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.13); }
-    .tier-basic-half {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .tier-basic-half .tier-left { margin-bottom: 0; }
-    .tier-basic-half .tier-price { font-size: 1.3rem; }
-    .tier-basic-half .tier-features { margin-bottom: 0; }
-    .tier-basic-half .tier-features li { padding: 2px 0; }
-    .tier-basic-half .basic-entry-tag { margin-top: 8px; }
-    .tier-basic-sep {
-      height: 1px;
-      background: rgba(26,188,156,0.2);
-      margin: 0;
-      flex-shrink: 0;
-    }
-    .tier-basic-combined .tier-badge {
+    .tier-basic-plus:hover { box-shadow: 0 16px 40px rgba(26,188,156,0.18); }
+    .tier-basic-plus .tier-badge {
       color: var(--teal-dark);
       letter-spacing: 0.14em;
       font-size: 0.7rem;
@@ -899,9 +878,9 @@
       border: 1.5px solid rgba(26,188,156,0.45);
       padding: 4px 14px;
       border-radius: 100px;
-      background: rgba(26,188,156,0.1);
+      background: rgba(26,188,156,0.15);
     }
-    .tier-basic-combined .tier-price { color: var(--navy); }
+    .tier-basic-plus .tier-price { color: var(--navy); }
 
     /* Gold */
     .tier-gold {
@@ -1856,7 +1835,7 @@
           <div class="exp-name">Dinner at Rosso's</div>
           <div class="exp-meta">4 people · 16h ago</div>
         </div>
-        <div class="exp-amount">$84.00</div>
+        <div class="exp-amount">$84.37</div>
       </div>
 
       <div class="exp-connector" data-reveal="up" data-delay="90">
@@ -1874,14 +1853,14 @@
       <div class="exp-progress" data-reveal="up" data-delay="180">
         <div class="exp-progress-header">
           <span class="exp-progress-label">Collected</span>
-          <span class="exp-progress-vals">$50 | $84</span>
+          <span class="exp-progress-vals">$51.37 | $84.37</span>
         </div>
         <div class="exp-progress-bar">
-          <div class="exp-progress-fill" style="width:60%"></div>
+          <div class="exp-progress-fill" style="width:61%"></div>
         </div>
         <div class="exp-progress-footer">
           <span>2 of 4 settled up</span>
-          <span>60%</span>
+          <span>61%</span>
         </div>
       </div>
 
@@ -1892,7 +1871,7 @@
             <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=23" alt="You" /></div>
             <div class="exp-person-name">You</div>
           </div>
-          <div class="exp-person-amt">$28.00</div>
+          <div class="exp-person-amt">$28.50</div>
         </div>
         <div class="exp-person paid" data-reveal="up" data-delay="320">
           <div class="exp-status paid">Paid</div>
@@ -1900,7 +1879,7 @@
             <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=33" alt="Alex" /></div>
             <div class="exp-person-name">Alex</div>
           </div>
-          <div class="exp-person-amt">$22.00</div>
+          <div class="exp-person-amt">$22.87</div>
         </div>
         <div class="exp-person pending" data-reveal="up" data-delay="370">
           <div class="exp-status pending">Owes</div>
@@ -1908,7 +1887,7 @@
             <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=45" alt="Sam" /></div>
             <div class="exp-person-name">Sam</div>
           </div>
-          <div class="exp-person-amt">$20.00</div>
+          <div class="exp-person-amt">$18.63</div>
         </div>
         <div class="exp-person pending" data-reveal="up" data-delay="420">
           <div class="exp-status pending">Owes</div>
@@ -1916,7 +1895,7 @@
             <div class="exp-avatar"><img src="https://i.pravatar.cc/150?img=56" alt="Jordan" /></div>
             <div class="exp-person-name">Jordan</div>
           </div>
-          <div class="exp-person-amt">$14.00</div>
+          <div class="exp-person-amt">$14.37</div>
         </div>
       </div>
 
@@ -2011,30 +1990,40 @@
     <div class="tiers-inner">
       <div class="tiers-grid">
 
-        <div class="tier-card tier-basic-combined" data-reveal="up" data-delay="80">
-
-          <div class="tier-basic-half">
-            <div class="tier-left">
-              <div class="tier-badge">· Standard ·</div>
-              <div class="tier-price">&lt; 250<span> pts</span></div>
-            </div>
-            <ul class="tier-features">
-              <li>2.00% Instant Withdrawal Rate</li>
-            </ul>
+        <div class="tier-card tier-basic" data-reveal="up" data-delay="80">
+          <div class="tier-left">
+            <div class="tier-badge">· Standard ·</div>
+            <div class="tier-price">&lt; 250<span> pts</span></div>
           </div>
-
-          <div class="tier-basic-sep"></div>
-
-          <div class="tier-basic-half">
-            <div class="tier-left">
-              <div class="tier-price">250+<span> pts</span></div>
-            </div>
-            <ul class="tier-features">
-              <li>Monthly Recap</li>
-            </ul>
-            <div class="basic-entry-tag">· Rising Member ·</div>
+          <ul class="tier-features">
+            <li>2.00% Instant Withdrawal Rate</li>
+            <li>-</li>
+            <li>-</li>
+          </ul>
+          <div class="tier-dots">
+            <span class="tier-dot" style="background:#1abc9c;"></span>
+            <span class="tier-dot" style="background:#d1f2eb;"></span>
+            <span class="tier-dot" style="background:#0d1f1a;"></span>
           </div>
+          <div class="basic-entry-tag">· Entry Level ·</div>
+        </div>
 
+        <div class="tier-card tier-basic-plus" data-reveal="up" data-delay="180">
+          <div class="tier-left">
+            <div class="tier-badge">· Basic+ ·</div>
+            <div class="tier-price">250+<span> pts</span></div>
+          </div>
+          <ul class="tier-features">
+            <li>2.00% Instant Withdrawal Rate</li>
+            <li>Monthly Recap</li>
+            <li>-</li>
+          </ul>
+          <div class="tier-dots">
+            <span class="tier-dot" style="background:#1abc9c;"></span>
+            <span class="tier-dot" style="background:#d1f2eb;"></span>
+            <span class="tier-dot" style="background:#0d1f1a;"></span>
+          </div>
+          <div class="basic-entry-tag">· Rising Member ·</div>
         </div>
 
         <div class="tier-card tier-gold" data-reveal="up" data-delay="300">
@@ -2234,6 +2223,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       var section = document.querySelector('.mint-section');
       var basicCard = document.querySelector('.tier-basic');
+      var basicPlusCard = document.querySelector('.tier-basic-plus');
       var goldCard = document.querySelector('.tier-gold');
       var blackCard = document.querySelector('.tier-black');
       var lockedClass = null;
@@ -2250,6 +2240,12 @@
       basicCard.addEventListener('mouseenter', function() { applyHover('hover-basic'); });
       basicCard.addEventListener('mouseleave', function() { applyHover(lockedClass); });
       basicCard.addEventListener('click', function() {
+        lockedClass = (lockedClass === 'hover-basic') ? null : 'hover-basic';
+      });
+
+      basicPlusCard.addEventListener('mouseenter', function() { applyHover('hover-basic'); });
+      basicPlusCard.addEventListener('mouseleave', function() { applyHover(lockedClass); });
+      basicPlusCard.addEventListener('click', function() {
         lockedClass = (lockedClass === 'hover-basic') ? null : 'hover-basic';
       });
 
@@ -2312,13 +2308,15 @@
     // Phone keypad interaction
     (function() {
       var amountEl = document.querySelector('.pay-amount');
-      var cents = 0;
+      var cents = window.innerWidth <= 600 ? 6558 : 0;
 
       function updateDisplay() {
         var d = Math.floor(cents / 100);
         var c = cents % 100;
         amountEl.textContent = '$' + d + '.' + (c < 10 ? '0' : '') + c;
       }
+
+      updateDisplay();
 
       document.querySelectorAll('.pay-key[data-key]').forEach(function(key) {
         key.style.cursor = 'pointer';
