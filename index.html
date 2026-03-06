@@ -1139,7 +1139,7 @@
     /* Podium */
     .lb-podium {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
       gap: 20px;
       width: 100%;
@@ -1149,38 +1149,42 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
-    .lb-pod-crown {
-      font-size: 1.5rem;
-      color: #c9a227;
-      line-height: 1;
-      margin-bottom: 2px;
+    .lb-pod-avatar-wrap {
+      position: relative;
+      display: inline-block;
     }
     .lb-pod-avatar {
       border-radius: 50%;
-      background: var(--teal-light);
-      border: 2.5px solid var(--teal);
+      overflow: hidden;
+      border: 3px solid var(--teal);
+      width: 78px;
+      height: 78px;
+    }
+    .lb-pod-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lb-pod-1 .lb-pod-avatar { width: 100px; height: 100px; border-color: #c9a227; }
+    .lb-pod-2 .lb-pod-avatar { border-color: #9ca3af; }
+    .lb-pod-3 .lb-pod-avatar { border-color: #b97333; }
+    .lb-pod-rank {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--teal-dark);
-      width: 58px;
-      height: 58px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      border: 2px solid white;
+      color: white;
     }
-    .lb-pod-avatar { overflow: hidden; }
-    .lb-pod-avatar svg { width: 52%; height: 52%; }
-    .lb-pod-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .lb-pod-1 .lb-pod-avatar {
-      width: 76px;
-      height: 76px;
-      border-color: #c9a227;
-      background: #fef9e3;
-      color: #9a7210;
-    }
-    .lb-pod-2 .lb-pod-avatar { border-color: #9ca3af; background: #f3f4f6; color: #6b7280; }
-    .lb-pod-3 .lb-pod-avatar { border-color: #b97333; background: #fdf0e3; color: #92581a; }
-    .lb-pod-rank { display: none; }
+    .lb-pod-1 .lb-pod-rank { background: #f59e0b; }
+    .lb-pod-2 .lb-pod-rank { background: #9ca3af; }
+    .lb-pod-3 .lb-pod-rank { background: #b97333; }
     .lb-pod-name {
       font-family: 'DM Sans', sans-serif;
       font-size: 0.78rem;
@@ -1198,50 +1202,6 @@
     .lb-pod-1 .lb-pod-score { color: #c9a227; }
     .lb-pod-2 .lb-pod-score { color: #9ca3af; }
     .lb-pod-3 .lb-pod-score { color: #b97333; }
-
-    /* Podium 3D platform */
-    .lb-pod-base {
-      position: relative;
-      width: 84px;
-      border-radius: 6px 6px 0 0;
-      margin-top: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 2.2rem;
-      color: rgba(255,255,255,0.55);
-      letter-spacing: -0.02em;
-    }
-    /* Top face — parallelogram via skewX */
-    .lb-pod-base::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: 0; right: 0;
-      height: 10px;
-      border-radius: 4px 4px 0 0;
-      transform: skewX(-45deg);
-      transform-origin: bottom left;
-    }
-    .lb-pod-1 .lb-pod-base {
-      height: 76px;
-      background: linear-gradient(160deg, #fbbf24, #f59e0b);
-      box-shadow: 10px 10px 0 #92400e, 0 0 28px rgba(245,158,11,0.35);
-    }
-    .lb-pod-1 .lb-pod-base::before { background: #fde68a; }
-    .lb-pod-2 .lb-pod-base {
-      height: 52px;
-      background: #94a3b8;
-      box-shadow: 10px 10px 0 #334155;
-    }
-    .lb-pod-2 .lb-pod-base::before { background: #e2e8f0; }
-    .lb-pod-3 .lb-pod-base {
-      height: 34px;
-      background: #b97333;
-      box-shadow: 10px 10px 0 #7c3f0e;
-    }
-    .lb-pod-3 .lb-pod-base::before { background: #d4956a; }
 
     /* List */
     .lb-list {
@@ -2123,31 +2083,30 @@
       <div class="lb-podium">
 
         <div class="lb-pod lb-pod-2" data-reveal="pop" data-delay="200">
-          <div class="lb-pod-avatar">
-            <img src="https://i.pravatar.cc/150?img=33" alt="Alex" />
+          <div class="lb-pod-avatar-wrap">
+            <div class="lb-pod-avatar"><img src="https://i.pravatar.cc/150?img=33" alt="Alex" /></div>
+            <div class="lb-pod-rank">2</div>
           </div>
           <div class="lb-pod-name">Alex</div>
           <div class="lb-pod-score">982 pts</div>
-          <div class="lb-pod-base">2</div>
         </div>
 
         <div class="lb-pod lb-pod-1" data-reveal="pop" data-delay="0">
-          <div class="lb-pod-crown">♛</div>
-          <div class="lb-pod-avatar">
-            <img src="https://i.pravatar.cc/150?img=11" alt="Brennan" />
+          <div class="lb-pod-avatar-wrap">
+            <div class="lb-pod-avatar"><img src="https://i.pravatar.cc/150?img=11" alt="Brennan" /></div>
+            <div class="lb-pod-rank">1</div>
           </div>
           <div class="lb-pod-name">Brennan</div>
           <div class="lb-pod-score">1,204 pts</div>
-          <div class="lb-pod-base">1</div>
         </div>
 
         <div class="lb-pod lb-pod-3" data-reveal="pop" data-delay="350">
-          <div class="lb-pod-avatar">
-            <img src="https://i.pravatar.cc/150?img=45" alt="Sam" />
+          <div class="lb-pod-avatar-wrap">
+            <div class="lb-pod-avatar"><img src="https://i.pravatar.cc/150?img=45" alt="Sam" /></div>
+            <div class="lb-pod-rank">3</div>
           </div>
           <div class="lb-pod-name">Sam</div>
           <div class="lb-pod-score">847 pts</div>
-          <div class="lb-pod-base">3</div>
         </div>
 
       </div>
