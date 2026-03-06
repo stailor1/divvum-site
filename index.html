@@ -123,8 +123,8 @@
     .tiers-tagline-title {
       font-family: 'DM Sans', sans-serif;
       font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      font-weight: 900;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
       color: var(--teal-dark);
       margin-bottom: 18px;
@@ -270,6 +270,7 @@
       text-align: center;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(160deg, #f5f3f1 0%, #eaf8f4 100%);
     }
 
 
@@ -299,6 +300,7 @@
       position: relative;
       margin-top: 28px;
       margin-bottom: 56px;
+      animation: float 6s ease-in-out infinite;
     }
     .phone-wrap::after {
       content: '';
@@ -773,7 +775,7 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .tier-card:hover {
-      transform: scale(1.04);
+      transform: translateY(-8px);
     }
     .tier-popular {
       position: absolute;
@@ -1045,7 +1047,7 @@
 
 /* LEADERBOARD SECTION */
     .lb-section {
-      background: var(--bg-primary);
+      background: linear-gradient(160deg, #f5f3f1 0%, #eaf8f4 100%);
       padding: 100px 48px 120px;
       display: flex;
       align-items: center;
@@ -1107,8 +1109,8 @@
     .lb-heading {
       font-family: 'DM Sans', sans-serif;
       font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      font-weight: 900;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
       color: var(--teal-dark);
       margin-bottom: 18px;
@@ -1226,8 +1228,8 @@
     }
     .lb-pod-1 .lb-pod-base {
       height: 76px;
-      background: #f59e0b;
-      box-shadow: 10px 10px 0 #92400e;
+      background: linear-gradient(160deg, #fbbf24, #f59e0b);
+      box-shadow: 10px 10px 0 #92400e, 0 0 28px rgba(245,158,11,0.35);
     }
     .lb-pod-1 .lb-pod-base::before { background: #fde68a; }
     .lb-pod-2 .lb-pod-base {
@@ -1542,7 +1544,7 @@
       justify-content: center;
       gap: 72px;
       padding: 80px 48px 100px;
-      background: var(--bg-primary);
+      background: linear-gradient(160deg, #edfaf6 0%, #f5f3f1 100%);
       position: relative;
     }
     .pts-text {
@@ -1599,10 +1601,11 @@
       font-size: 0.8rem;
       font-weight: 800;
       color: var(--teal-dark);
-      background: var(--teal-light);
+      background: linear-gradient(135deg, #a8f0d8 0%, var(--teal-light) 100%);
       padding: 5px 11px;
       border-radius: 9px;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(26,188,156,0.2);
     }
     .pts-badge-icon {
       width: 32px; height: 32px;
@@ -1622,14 +1625,14 @@
     /* ---- Scroll Reveal ---- */
     [data-reveal] {
       opacity: 0;
-      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: transform, opacity;
     }
-    [data-reveal="up"]    { transform: translateY(22px); }
-    [data-reveal="left"]  { transform: translateX(-22px); }
-    [data-reveal="right"] { transform: translateX(22px); }
-    [data-reveal="pop"]   { transform: scale(0.88) translateY(14px); }
+    [data-reveal="up"]    { transform: translateY(40px); }
+    [data-reveal="left"]  { transform: translateX(-40px); }
+    [data-reveal="right"] { transform: translateX(40px); }
+    [data-reveal="pop"]   { transform: scale(0.82) translateY(22px); }
     [data-reveal].revealed { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       [data-reveal] { transition: opacity 0.3s ease !important; transform: none !important; }
