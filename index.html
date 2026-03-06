@@ -1392,7 +1392,9 @@
       justify-content: center;
       font-size: 1.35rem;
       flex-shrink: 0;
+      overflow: hidden;
     }
+    .exp-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .exp-info { flex: 1; }
     .exp-name {
       font-family: 'DM Sans', sans-serif;
@@ -1869,7 +1871,7 @@
     <div class="about-graphic">
 
       <div class="exp-card" data-reveal="up" data-delay="0">
-        <div class="exp-icon">🍽️</div>
+        <div class="exp-icon"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=100&h=100&fit=crop&auto=format" alt="Dinner at Rosso's" /></div>
         <div class="exp-info">
           <div class="exp-name">Dinner at Rosso's</div>
           <div class="exp-meta">4 people · 16h ago</div>
