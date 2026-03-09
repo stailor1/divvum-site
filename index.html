@@ -281,18 +281,8 @@
       line-height: 1.08;
       margin-bottom: 20px;
       position: relative;
-      background: linear-gradient(135deg, #a8f5e5 0%, #1abc9c 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
-    h1 .accent { color: inherit; }
-    h2, h3 {
-      background: linear-gradient(135deg, #a8f5e5 0%, #1abc9c 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    h1 .accent { color: var(--teal); }
 
     .sub {
       font-size: 1.05rem;
@@ -431,17 +421,14 @@
       font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: 0.14em;
+      color: var(--navy);
       margin: 0;
       line-height: 1;
       text-transform: uppercase;
       position: relative;
       z-index: 1;
-      background: linear-gradient(135deg, #a8f5e5 0%, #1abc9c 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
-    .welcome-hero h1 span { color: inherit; }
+    .welcome-hero h1 span { color: var(--teal-dark); }
     .welcome-body {
       flex: 1;
       background: #ffffff;
@@ -1123,12 +1110,10 @@
       font-weight: 900;
       letter-spacing: 0.03em;
       text-transform: uppercase;
+      color: var(--teal-dark);
       margin-bottom: 18px;
       text-align: center;
-      background: linear-gradient(135deg, #a8f5e5 0%, #1abc9c 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      transition: color 0.5s ease;
     }
     .lb-sub {
       font-family: 'DM Sans', sans-serif;
