@@ -286,6 +286,7 @@
 
     .sub {
       font-size: 1.05rem;
+      font-weight: 700;
       color: var(--gray);
       max-width: 400px;
       line-height: 1.65;
@@ -1118,7 +1119,7 @@
     .lb-sub {
       font-family: 'DM Sans', sans-serif;
       font-size: clamp(1.15rem, 1.7vw, 1.4rem);
-      font-weight: 300;
+      font-weight: 700;
       color: var(--navy);
       line-height: 1.7;
       margin-bottom: 16px;
@@ -2303,7 +2304,7 @@
     // Phone keypad interaction
     (function() {
       var amountEl = document.querySelector('.pay-amount');
-      var cents = window.innerWidth <= 600 ? 6558 : 0;
+      var cents = window.innerWidth <= 600 ? 8437 : 0;
 
       function updateDisplay() {
         var d = Math.floor(cents / 100);
